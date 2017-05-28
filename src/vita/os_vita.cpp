@@ -21,8 +21,24 @@ int SDL_Init(int flag) //returns 0 on success, -1 on failure
 	scePowerSetGpuClockFrequency(222);
 	scePowerSetGpuXbarClockFrequency(166);
 	
-	// Read the language field from the config savegame.
-	//CFGU_GetSystemLanguage(&language);
+	// Getting system language
+	sceAppUtilInit(&(SceAppUtilInitParam){}, &(SceAppUtilBootParam){});
+	int lang;
+	sceAppUtilSystemParamGetInt(SCE_SYSTEM_PARAM_ID_LANG, &lang);
+	switch (lang){
+		case SCE_SYSTEM_PARAM_LANG_FRENCH:
+			language = 2;
+			break;
+		case SCE_SYSTEM_PARAM_LANG_SPANISH:
+			language = 5;
+			break;
+		case SCE_SYSTEM_PARAM_LANG_ITALIAN:
+			language = 4;
+			break;
+		default:
+			language = 1;
+			break;
+	}
 	
 	// Setting start tick
 	startTick = sceKernelGetProcessTimeWide();
