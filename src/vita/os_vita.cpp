@@ -8,6 +8,7 @@
 
 uint8_t language = 1;
 extern vita2d_texture* fbo;
+uint64_t startTick;
 
 int SDL_Init(int flag) //returns 0 on success, -1 on failure 
 {
@@ -23,6 +24,9 @@ int SDL_Init(int flag) //returns 0 on success, -1 on failure
 	// Read the language field from the config savegame.
 	//CFGU_GetSystemLanguage(&language);
 	
+	// Setting start tick
+	startTick = sceKernelGetProcessTimeWide();
+	
 	// In case game dir doesn't exist
     sceIoMkdir("ux0:data/ZeldaOLB", 0777);
 
@@ -37,9 +41,7 @@ void SDL_Quit()
 
 int SDL_GetTicks()
 {
-	SceRtcTick tick;
-	sceRtcGetCurrentTick(&tick);
-    return tick.tick;
+	return (sceKernelGetProcessTimeWide() - startTick)/1000;
 }
 
 void SDL_Delay(int ms)
