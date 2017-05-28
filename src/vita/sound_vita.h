@@ -5,17 +5,30 @@
 #define FSOUND_FREE 1
 #define NUMSFX (45)
 
-typedef struct FSOUND_SAMPLE
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+// Music block struct
+typedef struct DecodedMusic
 {
-	uint8_t* data;
-	uint32_t size;
-	uint32_t format;
-	bool used;
+	uint8_t* audiobuf;
+	uint8_t* audiobuf2;
+	uint8_t* cur_audiobuf;
+	FILE* handle;
+	volatile bool isPlaying;
 	bool loop;
-} FSOUND_SAMPLE;
+	volatile bool pauseTrigger;
+	volatile bool closeTrigger;
+	volatile uint8_t audioThread;
+	volatile int volume;
+	char filepath[256];
+	bool tempBlock;
+	bool used;
+} DecodedMusic;
 
-
-typedef FSOUND_SAMPLE FMUSIC_MODULE;
+typedef DecodedMusic FSOUND_SAMPLE;
+typedef DecodedMusic FMUSIC_MODULE;
 
 void soundInit();
 void soundClose();
