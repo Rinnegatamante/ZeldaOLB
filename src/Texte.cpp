@@ -620,7 +620,7 @@ case 2: // French
         case 405 : texte = "Cette dernière lui indiqua son tout dernier espoir : un portail vers un monde secret..."; break;
         case 406 : texte = "Partie sauvegardée."; break;
         case 407 : texte = "Tu n'as pas besoin de boire cette potion maintenant."; break;
-        case 408 : texte = "AIDE : Appuie sur START pour consulter l'aide."; break;
+        case 408 : texte = "AIDE : Appuie sur L+SQUARE pour consulter l'aide."; break;
         case 409 : texte = "Grrrr... Comment as-tu pu t'échapper du monde des morts et arriver jusqu'ici ???"; idsuiv=410; break;
         case 410 : texte = "Pourquoi t'entêtes-tu à venir m'affronter ? *Même si tu me terrasses je reviendrais toujours à la vie."; idsuiv=411; break;
         case 411 : texte = "Ta quête est vaine, abandonne tout espoir! **Let's rock, baby!"; break;
@@ -1209,7 +1209,7 @@ case 4: //Italian
         case 405 : texte = "She indicated to him his last hope : a portal to a secret world..."; break;
         case 406 : texte = "Game saved."; break;
         case 407 : texte = "You don't need to drink this potion now."; break;
-        case 408 : texte = "HELP : Press START to see the help."; break;
+        case 408 : texte = "HELP : Press L+SQUARE to see the help."; break;
         case 409 : texte = "Grrrr... But how could you escape from the world of the deads and arrive here???"; idsuiv=410; break;
         case 410 : texte = "Why do you persist to challenge me? *Even if you strike me down I will always return to life."; idsuiv=411; break;
         case 411 : texte = "Your quest is vain, abandon all hope! **Let's rock, baby!"; break;
@@ -1799,7 +1799,7 @@ case 5: // Spanish
         case 405 : texte = "Ella le indicó su ultima esperanza : un portal hasta un mondo secreto..."; break;
         case 406 : texte = "Juego gravado."; break;
         case 407 : texte = "No necesitas beber esta pócima ahora."; break;
-        case 408 : texte = "AYUDA : Pulsa START para consultar la ayuda."; break;
+        case 408 : texte = "AYUDA : Pulsa L+SQUARE para consultar la ayuda."; break;
         case 409 : texte = "Grrrr... Como has podido escaparte del mundo de los muertos y llegar aquí ???"; idsuiv=410; break;
         case 410 : texte = "Porque te empeñas en venir a enfrentarme ? *Aunque me venzas siempre resucitaré."; idsuiv=411; break;
         case 411 : texte = "Tu búsqueda es vana, abandona toda esperanza! **Let's rock, baby!"; break;
@@ -2388,7 +2388,7 @@ default:
         case 405 : texte = "She indicated to him his last hope : a portal to a secret world..."; break;
         case 406 : texte = "Game saved."; break;
         case 407 : texte = "You don't need to drink this potion now."; break;
-        case 408 : texte = "HELP : Press START to see the help."; break;
+        case 408 : texte = "HELP : Press L+SQUARE to see the help."; break;
         case 409 : texte = "Grrrr... But how could you escape from the world of the deads and arrive here???"; idsuiv=410; break;
         case 410 : texte = "Why do you persist to challenge me? *Even if you strike me down I will always return to life."; idsuiv=411; break;
         case 411 : texte = "Your quest is vain, abandon all hope! **Let's rock, baby!"; break;

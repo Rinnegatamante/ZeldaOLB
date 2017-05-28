@@ -469,24 +469,24 @@ void Generique::initAide1() {
 case 2: // French
     gpJeu->affiche(image, "AIDE 1/2", 40, 16);
     
-    gpJeu->affiche(image, "Retour au jeu : Entrée - Suite : Droite", 24, 208);
+    gpJeu->affiche(image, "Retour au jeu : X - Suite : Droite", 24, 208);
     
-    gpJeu->affiche(image, "Lire / Ouvrir / Parler : A", 24, ligne); ligne+=16;
-    gpJeu->affiche(image, "Valider / Passer texte : A", 24, ligne); ligne+=16;
+    gpJeu->affiche(image, "Lire / Ouvrir / Parler : X", 24, ligne); ligne+=16;
+    gpJeu->affiche(image, "Valider / Passer texte : X", 24, ligne); ligne+=16;
     gpJeu->affiche(image, "Déplacer Link : Flèches de direction", 24, ligne); ligne+=16;
     if (gpJoueur->hasObjet(O_BOTTES)) {
         gpJeu->affiche(image, "Courir : R maintenu", 24, ligne); 
         ligne+=16;}
     if (gpJoueur->getEpee()) {
-        gpJeu->affiche(image, "Coup d'épée : B", 24, ligne); ligne+=16;
-        gpJeu->affiche(image, "Attaque Tornade : B maintenu puis lâché", 24, ligne); 
+        gpJeu->affiche(image, "Coup d'épée : O", 24, ligne); ligne+=16;
+        gpJeu->affiche(image, "Attaque Tornade : O maintenu puis lâché", 24, ligne); 
         ligne+=16;}
     gpJeu->affiche(image, "Menu de sélection d'objet : L + START", 24, ligne); ligne+=16;
     if (ligne >= 176) return;
-    gpJeu->affiche(image, "Utiliser l'objet sélectionné : Y", 24, ligne); ligne+=16;
+    gpJeu->affiche(image, "Utiliser l'objet sélectionné : Square", 24, ligne); ligne+=16;
     if (ligne >= 176) return;
     if (gpJoueur->hasObjet(O_GANTS)) {
-        gpJeu->affiche(image, "Porter : X", 24, ligne); 
+        gpJeu->affiche(image, "Porter : Triangle", 24, ligne); 
         ligne+=16;}
     if (ligne >= 176) return;
     if (gpJoueur->hasObjet(O_CARTE))
@@ -495,12 +495,12 @@ case 2: // French
     ligne+=16;
     if (ligne >= 176) return;
     if (gpJoueur->hasObjet(O_ENCYCL)) {
-        gpJeu->affiche(image, "Afficher les monstres vaincus : L et B", 24, ligne); 
+        gpJeu->affiche(image, "Afficher les monstres vaincus : L et O", 24, ligne); 
         ligne+=16;}
     if (ligne >= 176) return;
     gpJeu->affiche(image, "Regarder autour : L et direction", 24, ligne); ligne+=16;
     if (ligne >= 176) return;
-    gpJeu->affiche(image, "Agrandir / Rétrécir : L et A", 24, ligne); ligne+=16;
+    gpJeu->affiche(image, "Agrandir / Rétrécir : L et X", 24, ligne); ligne+=16;
     if (ligne >= 176) return;
     gpJeu->affiche(image, "Sauvegarder / Quitter : SELECT", 24, ligne); ligne+=16;
 
@@ -550,24 +550,24 @@ break;
 case 5: // Spanish
     gpJeu->affiche(image, "AYUDA 1/2", 40-3, 16);
     
-    gpJeu->affiche(image, "Volver al juego : A  Siguiente : Derecha", 24, 208);
+    gpJeu->affiche(image, "Volver al juego : X  Siguiente : Derecha", 24, 208);
     
-    gpJeu->affiche(image, "Leer / Abrir / Hablar : A", 24, ligne); ligne+=16;
-    gpJeu->affiche(image, "Validar / Pasar texto : A", 24, ligne); ligne+=16;
+    gpJeu->affiche(image, "Leer / Abrir / Hablar : X", 24, ligne); ligne+=16;
+    gpJeu->affiche(image, "Validar / Pasar texto : X", 24, ligne); ligne+=16;
     gpJeu->affiche(image, "Mover a Link : Flechas de dirección", 24, ligne); ligne+=16;
     if (gpJoueur->hasObjet(O_BOTTES)) {
         gpJeu->affiche(image, "Correr : R y dirección ", 24, ligne); 
         ligne+=16;}
     if (gpJoueur->getEpee()) {
-        gpJeu->affiche(image, "Golpe de espada : B", 24, ligne); ligne+=16;
-        gpJeu->affiche(image, "Giratorio : B mantenido luego soltado", 24, ligne); 
+        gpJeu->affiche(image, "Golpe de espada : O", 24, ligne); ligne+=16;
+        gpJeu->affiche(image, "Giratorio : O mantenido luego soltado", 24, ligne); 
         ligne+=16;}
     gpJeu->affiche(image, "Menu de selección del objeto : L y START", 24, ligne); ligne+=16;
     if (ligne >= 176) return;
-    gpJeu->affiche(image, "Utilizar el objeto seleccionnado : Y", 24, ligne); ligne+=16;
+    gpJeu->affiche(image, "Utilizar el objeto seleccionnado : Square", 24, ligne); ligne+=16;
     if (ligne >= 176) return;
     if (gpJoueur->hasObjet(O_GANTS)) {
-        gpJeu->affiche(image, "Levantar : X", 24, ligne); 
+        gpJeu->affiche(image, "Levantar : Triangle", 24, ligne); 
         ligne+=16;}
     if (ligne >= 176) return;
     if (gpJoueur->hasObjet(O_CARTE))
@@ -576,12 +576,12 @@ case 5: // Spanish
     ligne+=16;
     if (ligne >= 176) return;
     if (gpJoueur->hasObjet(O_ENCYCL)) {
-        gpJeu->affiche(image, "Ver los monstros vencidos : L y B", 24, ligne); 
+        gpJeu->affiche(image, "Ver los monstros vencidos : L y O", 24, ligne); 
         ligne+=16;}
     if (ligne >= 176) return;
     gpJeu->affiche(image, "Mirar alrededor : L y dirección", 24, ligne); ligne+=16;
     if (ligne >= 176) return;
-    gpJeu->affiche(image, "Agrandar / Encoger : L y A", 24, ligne); ligne+=16;
+    gpJeu->affiche(image, "Agrandar / Encoger : L y X", 24, ligne); ligne+=16;
     if (ligne >= 176) return;
     gpJeu->affiche(image, "Grabar / Quitar : SELECT", 24, ligne); ligne+=16;
 break;
@@ -589,24 +589,24 @@ break;
 default:
     gpJeu->affiche(image, "HELP 1/2", 40, 16);
     
-    gpJeu->affiche(image, "Return to the game: A - Next: Right", 24, 208);
+    gpJeu->affiche(image, "Return to the game: X - Next: Right", 24, 208);
     
-    gpJeu->affiche(image, "Read / Open / Speak: A", 24, ligne); ligne+=16;
-    gpJeu->affiche(image, "Confirm / Pass text: A", 24, ligne); ligne+=16;
+    gpJeu->affiche(image, "Read / Open / Speak: X", 24, ligne); ligne+=16;
+    gpJeu->affiche(image, "Confirm / Pass text: X", 24, ligne); ligne+=16;
     gpJeu->affiche(image, "Move Link: Arrows", 24, ligne); ligne+=16;
     if (gpJoueur->hasObjet(O_BOTTES)) {
         gpJeu->affiche(image, "Run : R hold", 24, ligne); 
         ligne+=16;}
     if (gpJoueur->getEpee()) {
-        gpJeu->affiche(image, "Use sword: B", 24, ligne); ligne+=16;
-        gpJeu->affiche(image, "Spin attack: B hold then dropped", 24, ligne); 
+        gpJeu->affiche(image, "Use sword: O", 24, ligne); ligne+=16;
+        gpJeu->affiche(image, "Spin attack: O hold then dropped", 24, ligne); 
         ligne+=16;}
     gpJeu->affiche(image, "Item selection: L and START", 24, ligne); ligne+=16;
     if (ligne >= 176) return;
-    gpJeu->affiche(image, "Use selected item: Y", 24, ligne); ligne+=16;
+    gpJeu->affiche(image, "Use selected item: Triangle", 24, ligne); ligne+=16;
     if (ligne >= 176) return;
     if (gpJoueur->hasObjet(O_GANTS)) {
-        gpJeu->affiche(image, "Pick up items : X", 24, ligne); 
+        gpJeu->affiche(image, "Pick up items : Square", 24, ligne); 
         ligne+=16;}
     if (ligne >= 176) return;
     if (gpJoueur->hasObjet(O_CARTE))
@@ -615,12 +615,12 @@ default:
     ligne+=16;
     if (ligne >= 176) return;
     if (gpJoueur->hasObjet(O_ENCYCL)) {
-        gpJeu->affiche(image, "View defeated monsters: L and B", 24, ligne); 
+        gpJeu->affiche(image, "View defeated monsters: L and O", 24, ligne); 
         ligne+=16;}
     if (ligne >= 176) return;
     gpJeu->affiche(image, "Look around: L and direction", 24, ligne); ligne+=16;
     if (ligne >= 176) return;
-    gpJeu->affiche(image, "Enlarge / Shrink: L and A", 24, ligne); ligne+=16;
+    gpJeu->affiche(image, "Enlarge / Shrink: L and X", 24, ligne); ligne+=16;
     if (ligne >= 176) return;
     gpJeu->affiche(image, "Save / Quit: SELECT", 24, ligne); ligne+=16;
 
@@ -673,16 +673,16 @@ switch(getLanguage()) {
 case 2: // French
     gpJeu->affiche(image, "AIDE 2/2", 40, 16);
     
-    gpJeu->affiche(image, "Retour au jeu : A - Précédent : Gauche", 24, 208);
+    gpJeu->affiche(image, "Retour au jeu : X - Précédent : Gauche", 24, 208);
     
     ligne+=64;
     if (gpJoueur->hasObjet(O_BOTTES)) ligne+=16;
     if (gpJoueur->getEpee()) ligne+=32;
     if (ligne >= 64) 
-    gpJeu->affiche(image, "Utiliser l'objet sélectionné : Y", 24, ligne); ligne+=16;
+    gpJeu->affiche(image, "Utiliser l'objet sélectionné : Square", 24, ligne); ligne+=16;
     if (ligne >= 64) 
     if (gpJoueur->hasObjet(O_GANTS)) {
-        gpJeu->affiche(image, "Porter : X", 24, ligne); 
+        gpJeu->affiche(image, "Porter : Triangle", 24, ligne); 
         ligne+=16;}
     if (ligne >= 64) {
     if (gpJoueur->hasObjet(O_CARTE))
@@ -691,12 +691,12 @@ case 2: // French
     ligne+=16;
     if (ligne >= 64) 
     if (gpJoueur->hasObjet(O_ENCYCL)) {
-        gpJeu->affiche(image, "Afficher les monstres vaincus : L et B", 24, ligne); 
+        gpJeu->affiche(image, "Afficher les monstres vaincus : L et O", 24, ligne); 
         ligne+=16;}
     if (ligne >= 64) 
     gpJeu->affiche(image, "Regarder autour : L et direction", 24, ligne); ligne+=16;
     if (ligne >= 64) 
-    gpJeu->affiche(image, "Agrandir / Rétrécir : L et A", 24, ligne); ligne+=16;
+    gpJeu->affiche(image, "Agrandir / Rétrécir : L et X", 24, ligne); ligne+=16;
     if (ligne >= 64) 
     gpJeu->affiche(image, "Sauvegarder / Quitter : SELECT", 24, ligne); ligne+=16;
 break;
@@ -736,13 +736,13 @@ break;
 case 5: // Spanish
     gpJeu->affiche(image, "AYUDA 2/2", 40-3, 16);
     
-    gpJeu->affiche(image, "Volver al juego : A  Anterior : Izquierda", 24, 208);
+    gpJeu->affiche(image, "Volver al juego : X  Anterior : Izquierda", 24, 208);
     
     ligne+=64;
     if (gpJoueur->hasObjet(O_BOTTES)) ligne+=16;
     if (gpJoueur->getEpee()) ligne+=32;
     if (ligne >= 64) 
-    gpJeu->affiche(image, "Utilizar el objeto seleccionnado : Y", 24, ligne); ligne+=16;
+    gpJeu->affiche(image, "Utilizar el objeto seleccionnado : Square", 24, ligne); ligne+=16;
     if (ligne >= 64) 
     if (gpJoueur->hasObjet(O_GANTS)) {
         gpJeu->affiche(image, "Levantar : X", 24, ligne); 
@@ -754,12 +754,12 @@ case 5: // Spanish
     ligne+=16;
     if (ligne >= 64) 
     if (gpJoueur->hasObjet(O_ENCYCL)) {
-        gpJeu->affiche(image, "Ver los monstruos vencidos : L Y B", 24, ligne); 
+        gpJeu->affiche(image, "Ver los monstruos vencidos : L y O", 24, ligne); 
         ligne+=16;}
     if (ligne >= 64) 
     gpJeu->affiche(image, "Mirar alrededor : L y dirección", 24, ligne); ligne+=16;
     if (ligne >= 64) 
-    gpJeu->affiche(image, "Agrandar / Encoger : L y A", 24, ligne); ligne+=16;
+    gpJeu->affiche(image, "Agrandar / Encoger : L y X", 24, ligne); ligne+=16;
     if (ligne >= 64) 
     gpJeu->affiche(image, "Grabar / Quitar : SELECT", 24, ligne); ligne+=16;
 break;
@@ -767,16 +767,16 @@ break;
 default:
     gpJeu->affiche(image, "HELP 2/2", 40, 16);
     
-    gpJeu->affiche(image, "Return to the game: A - Previous: Left", 24, 208);
+    gpJeu->affiche(image, "Return to the game: X - Previous: Left", 24, 208);
     
     ligne+=64;
     if (gpJoueur->hasObjet(O_BOTTES)) ligne+=16;
     if (gpJoueur->getEpee()) ligne+=32;
     if (ligne >= 64) 
-    gpJeu->affiche(image, "Use selected item: Y", 24, ligne); ligne+=16;
+    gpJeu->affiche(image, "Use selected item: Square", 24, ligne); ligne+=16;
     if (ligne >= 64) 
     if (gpJoueur->hasObjet(O_GANTS)) {
-        gpJeu->affiche(image, "Pick up items : X", 24, ligne); 
+        gpJeu->affiche(image, "Pick up items : Triangle", 24, ligne); 
         ligne+=16;}
     if (ligne >= 64) {
     if (gpJoueur->hasObjet(O_CARTE))
@@ -785,12 +785,12 @@ default:
     ligne+=16;
     if (ligne >= 64) 
     if (gpJoueur->hasObjet(O_ENCYCL)) {
-        gpJeu->affiche(image, "View defeated monsters: L and B", 24, ligne); 
+        gpJeu->affiche(image, "View defeated monsters: L and O", 24, ligne); 
         ligne+=16;}
     if (ligne >= 64) 
     gpJeu->affiche(image, "Look around: R and direction", 24, ligne); ligne+=16;
     if (ligne >= 64) 
-    gpJeu->affiche(image, "Enlarge / Shrink: L and A", 24, ligne); ligne+=16;
+    gpJeu->affiche(image, "Enlarge / Shrink: L and X", 24, ligne); ligne+=16;
     if (ligne >= 64) 
     gpJeu->affiche(image, "Save / Quit: SELECT", 24, ligne); ligne+=16;
 break;	
