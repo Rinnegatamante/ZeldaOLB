@@ -481,17 +481,17 @@ case 2: // French
         gpJeu->affiche(image, "Coup d'épée : O", 24, ligne); ligne+=16;
         gpJeu->affiche(image, "Attaque Tornade : O maintenu puis lâché", 24, ligne); 
         ligne+=16;}
-    gpJeu->affiche(image, "Menu de sélection d'objet : L + START", 24, ligne); ligne+=16;
+    gpJeu->affiche(image, "Menu de sélection d'objet : L + Start", 24, ligne); ligne+=16;
     if (ligne >= 176) return;
-    gpJeu->affiche(image, "Utiliser l'objet sélectionné : Square", 24, ligne); ligne+=16;
+    gpJeu->affiche(image, "Utiliser l'objet sélectionné : Carré", 24, ligne); ligne+=16;
     if (ligne >= 176) return;
     if (gpJoueur->hasObjet(O_GANTS)) {
         gpJeu->affiche(image, "Porter : Triangle", 24, ligne); 
         ligne+=16;}
     if (ligne >= 176) return;
     if (gpJoueur->hasObjet(O_CARTE))
-        gpJeu->affiche(image, "Afficher la carte : START (extérieur ou donjons)", 24, ligne);
-    else gpJeu->affiche(image, "Afficher la carte : START (dans les donjons)", 24, ligne);
+        gpJeu->affiche(image, "Afficher la carte : Start (extérieur ou donjons)", 24, ligne);
+    else gpJeu->affiche(image, "Afficher la carte : Start (dans les donjons)", 24, ligne);
     ligne+=16;
     if (ligne >= 176) return;
     if (gpJoueur->hasObjet(O_ENCYCL)) {
@@ -502,7 +502,7 @@ case 2: // French
     if (ligne >= 176) return;
     gpJeu->affiche(image, "Agrandir / Rétrécir : L et X", 24, ligne); ligne+=16;
     if (ligne >= 176) return;
-    gpJeu->affiche(image, "Sauvegarder / Quitter : SELECT", 24, ligne); ligne+=16;
+    gpJeu->affiche(image, "Sauvegarder / Quitter : Select", 24, ligne); ligne+=16;
 
 break;
 
@@ -562,17 +562,17 @@ case 5: // Spanish
         gpJeu->affiche(image, "Golpe de espada : O", 24, ligne); ligne+=16;
         gpJeu->affiche(image, "Giratorio : O mantenido luego soltado", 24, ligne); 
         ligne+=16;}
-    gpJeu->affiche(image, "Menu de selección del objeto : L y START", 24, ligne); ligne+=16;
+    gpJeu->affiche(image, "Menu de selección del objeto : L y Start", 24, ligne); ligne+=16;
     if (ligne >= 176) return;
-    gpJeu->affiche(image, "Utilizar el objeto seleccionnado : Square", 24, ligne); ligne+=16;
+    gpJeu->affiche(image, "Utilizar el objeto seleccionnado : Cuadrado", 24, ligne); ligne+=16;
     if (ligne >= 176) return;
     if (gpJoueur->hasObjet(O_GANTS)) {
         gpJeu->affiche(image, "Levantar : Triangle", 24, ligne); 
         ligne+=16;}
     if (ligne >= 176) return;
     if (gpJoueur->hasObjet(O_CARTE))
-        gpJeu->affiche(image, "Ver el mapa : START (exterior o templos)", 24, ligne);
-    else gpJeu->affiche(image, "Ver el mapa : START (en los templos)", 24, ligne);
+        gpJeu->affiche(image, "Ver el mapa : Start (exterior o templos)", 24, ligne);
+    else gpJeu->affiche(image, "Ver el mapa : Start (en los templos)", 24, ligne);
     ligne+=16;
     if (ligne >= 176) return;
     if (gpJoueur->hasObjet(O_ENCYCL)) {
@@ -583,7 +583,7 @@ case 5: // Spanish
     if (ligne >= 176) return;
     gpJeu->affiche(image, "Agrandar / Encoger : L y X", 24, ligne); ligne+=16;
     if (ligne >= 176) return;
-    gpJeu->affiche(image, "Grabar / Quitar : SELECT", 24, ligne); ligne+=16;
+    gpJeu->affiche(image, "Grabar / Quitar : Select", 24, ligne); ligne+=16;
 break;
 
 default:
@@ -679,15 +679,15 @@ case 2: // French
     if (gpJoueur->hasObjet(O_BOTTES)) ligne+=16;
     if (gpJoueur->getEpee()) ligne+=32;
     if (ligne >= 64) 
-    gpJeu->affiche(image, "Utiliser l'objet sélectionné : Square", 24, ligne); ligne+=16;
+    gpJeu->affiche(image, "Utiliser l'objet sélectionné : Carré", 24, ligne); ligne+=16;
     if (ligne >= 64) 
     if (gpJoueur->hasObjet(O_GANTS)) {
         gpJeu->affiche(image, "Porter : Triangle", 24, ligne); 
         ligne+=16;}
     if (ligne >= 64) {
     if (gpJoueur->hasObjet(O_CARTE))
-        gpJeu->affiche(image, "Afficher la carte : START (extérieur ou donjons)", 24, ligne);
-    else gpJeu->affiche(image, "Afficher la carte : START (dans les donjons)", 24, ligne);}
+        gpJeu->affiche(image, "Afficher la carte : Start (extérieur ou donjons)", 24, ligne);
+    else gpJeu->affiche(image, "Afficher la carte : Start (dans les donjons)", 24, ligne);}
     ligne+=16;
     if (ligne >= 64) 
     if (gpJoueur->hasObjet(O_ENCYCL)) {
@@ -698,7 +698,7 @@ case 2: // French
     if (ligne >= 64) 
     gpJeu->affiche(image, "Agrandir / Rétrécir : L et X", 24, ligne); ligne+=16;
     if (ligne >= 64) 
-    gpJeu->affiche(image, "Sauvegarder / Quitter : SELECT", 24, ligne); ligne+=16;
+    gpJeu->affiche(image, "Sauvegarder / Quitter : Select", 24, ligne); ligne+=16;
 break;
 
 /*case 4: // Italian
@@ -742,15 +742,15 @@ case 5: // Spanish
     if (gpJoueur->hasObjet(O_BOTTES)) ligne+=16;
     if (gpJoueur->getEpee()) ligne+=32;
     if (ligne >= 64) 
-    gpJeu->affiche(image, "Utilizar el objeto seleccionnado : Square", 24, ligne); ligne+=16;
+    gpJeu->affiche(image, "Utilizar el objeto seleccionnado : Cuadrado", 24, ligne); ligne+=16;
     if (ligne >= 64) 
     if (gpJoueur->hasObjet(O_GANTS)) {
         gpJeu->affiche(image, "Levantar : X", 24, ligne); 
         ligne+=16;}
     if (ligne >= 64) {
     if (gpJoueur->hasObjet(O_CARTE))
-        gpJeu->affiche(image, "Ver el mapa : START (exterior o templos)", 24, ligne);
-    else gpJeu->affiche(image, "Ver el mapa : START (en los templos)", 24, ligne);}
+        gpJeu->affiche(image, "Ver el mapa : Start (exterior o templos)", 24, ligne);
+    else gpJeu->affiche(image, "Ver el mapa : Start (en los templos)", 24, ligne);}
     ligne+=16;
     if (ligne >= 64) 
     if (gpJoueur->hasObjet(O_ENCYCL)) {
@@ -761,7 +761,7 @@ case 5: // Spanish
     if (ligne >= 64) 
     gpJeu->affiche(image, "Agrandar / Encoger : L y X", 24, ligne); ligne+=16;
     if (ligne >= 64) 
-    gpJeu->affiche(image, "Grabar / Quitar : SELECT", 24, ligne); ligne+=16;
+    gpJeu->affiche(image, "Grabar / Quitar : Select", 24, ligne); ligne+=16;
 break;
 
 default:
@@ -780,8 +780,8 @@ default:
         ligne+=16;}
     if (ligne >= 64) {
     if (gpJoueur->hasObjet(O_CARTE))
-        gpJeu->affiche(image, "Open the map: START (outside of dungeons)", 24, ligne);
-    else gpJeu->affiche(image, "Open the map: START (in dungeons)", 24, ligne);}
+        gpJeu->affiche(image, "Open the map: Start (outside of dungeons)", 24, ligne);
+    else gpJeu->affiche(image, "Open the map: Start (in dungeons)", 24, ligne);}
     ligne+=16;
     if (ligne >= 64) 
     if (gpJoueur->hasObjet(O_ENCYCL)) {
@@ -792,7 +792,7 @@ default:
     if (ligne >= 64) 
     gpJeu->affiche(image, "Enlarge / Shrink: L and X", 24, ligne); ligne+=16;
     if (ligne >= 64) 
-    gpJeu->affiche(image, "Save / Quit: SELECT", 24, ligne); ligne+=16;
+    gpJeu->affiche(image, "Save / Quit: Select", 24, ligne); ligne+=16;
 break;	
 }
 }

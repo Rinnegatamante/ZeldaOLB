@@ -295,8 +295,8 @@ case 2: // French
         case 194 : texte = "Tu as trouvé le grand Arc des Fées!!!**Tu tires désormais des flèches d'une puissance extraordinaire !!!"; break;
         case 195 : texte = "Tu as trouvé la Triforce !!!"; break;
         
-        case 197 : texte = "Tutoriel : appuie sur ESPACE pour parler, lire ou ouvrir un coffre, et sur ENTREE pour passer les textes à l'écran."; break;
-        case 198 : texte = "Appuie sur C pour soulever un objet léger."; break;
+        case 197 : texte = "Tutoriel : appuie sur Croix pour parler, lire, ouvrir un coffre ou pour passer les textes à l'écran."; break;
+        case 198 : texte = "Appuie sur Triangle pour soulever un objet léger."; break;
         case 199 : texte = "Souhaites-tu sauvegarder ta partie ?**                    ? OUI ?*                      non  "; break;
         case 200 : texte = "Souhaites-tu sauvegarder ta partie ?**                      oui  *                    ? NON ?"; break;
         case 201 : texte = "                   Niveau 1 :                                                                                 Temple de Firone"; break;
@@ -620,7 +620,7 @@ case 2: // French
         case 405 : texte = "Cette dernière lui indiqua son tout dernier espoir : un portail vers un monde secret..."; break;
         case 406 : texte = "Partie sauvegardée."; break;
         case 407 : texte = "Tu n'as pas besoin de boire cette potion maintenant."; break;
-        case 408 : texte = "AIDE : Appuie sur L+SQUARE pour consulter l'aide."; break;
+        case 408 : texte = "AIDE : Appuie sur L et Square pour consulter l'aide."; break;
         case 409 : texte = "Grrrr... Comment as-tu pu t'échapper du monde des morts et arriver jusqu'ici ???"; idsuiv=410; break;
         case 410 : texte = "Pourquoi t'entêtes-tu à venir m'affronter ? *Même si tu me terrasses je reviendrais toujours à la vie."; idsuiv=411; break;
         case 411 : texte = "Ta quête est vaine, abandonne tout espoir! **Let's rock, baby!"; break;
@@ -1209,7 +1209,7 @@ case 4: //Italian
         case 405 : texte = "She indicated to him his last hope : a portal to a secret world..."; break;
         case 406 : texte = "Game saved."; break;
         case 407 : texte = "You don't need to drink this potion now."; break;
-        case 408 : texte = "HELP : Press L+SQUARE to see the help."; break;
+        case 408 : texte = "HELP : Press L and Square to see the help."; break;
         case 409 : texte = "Grrrr... But how could you escape from the world of the deads and arrive here???"; idsuiv=410; break;
         case 410 : texte = "Why do you persist to challenge me? *Even if you strike me down I will always return to life."; idsuiv=411; break;
         case 411 : texte = "Your quest is vain, abandon all hope! **Let's rock, baby!"; break;
@@ -1474,8 +1474,8 @@ case 5: // Spanish
         case 194 : texte = "Has encontrado el gran Arco de las Hadas !!! **Ahora tiras flechas de una potencia extraordinaria !!!"; break;
         case 195 : texte = "Has encontrado la Trifuerza !!!"; break;
         
-        case 197 : texte = "Tutorial : pulsa ESPACIO para hablar, leer o abrir una arca, y ENTER para pasar los textos en la pantalla."; break;
-        case 198 : texte = "Pulsa C para levantar un objeto ligero."; break;
+        case 197 : texte = "Tutorial : pulsa Cruz para hablar, leer, abrir una arca o para pasar los textos en la pantalla."; break;
+        case 198 : texte = "Pulsa Triángulo para levantar un objeto ligero."; break;
         case 199 : texte = "Quieres gravar tu juego ?**                     ? SI ?*                       no  "; break;
         case 200 : texte = "Quieres gravar tu juego ?**                       si  *                     ? NO ?"; break;
         case 201 : texte = "                    Nivel 1 :                                                                                 Templo de Farone"; break;
@@ -1799,7 +1799,7 @@ case 5: // Spanish
         case 405 : texte = "Ella le indicó su ultima esperanza : un portal hasta un mondo secreto..."; break;
         case 406 : texte = "Juego gravado."; break;
         case 407 : texte = "No necesitas beber esta pócima ahora."; break;
-        case 408 : texte = "AYUDA : Pulsa L+SQUARE para consultar la ayuda."; break;
+        case 408 : texte = "AYUDA : Pulsa L y Cuadrado para consultar la ayuda."; break;
         case 409 : texte = "Grrrr... Como has podido escaparte del mundo de los muertos y llegar aquí ???"; idsuiv=410; break;
         case 410 : texte = "Porque te empeñas en venir a enfrentarme ? *Aunque me venzas siempre resucitaré."; idsuiv=411; break;
         case 411 : texte = "Tu búsqueda es vana, abandona toda esperanza! **Let's rock, baby!"; break;
@@ -2064,8 +2064,8 @@ default:
         case 194 : texte = "You find the Great Fairy Bow!!!**Now you can shoot arrows with an incredible power!!!"; break;
         case 195 : texte = "You find the Triforce !!!"; break;
         
-        case 197 : texte = "Tutorial : Press SPACE to talk, read or open a chest, and ENTER to pass the texts on the screen on."; break;
-        case 198 : texte = "Press C to lift a light object."; break;
+        case 197 : texte = "Tutorial : Press Cross to talk, read, open a chest or to pass the texts on the screen on."; break;
+        case 198 : texte = "Press Triangle to lift a light object."; break;
         case 199 : texte = "Do you want to save your game?**                    ? YES ?*                      no  "; break;
         case 200 : texte = "Do you want to save your game?**                      yes  *                    ? NO ?"; break;
         case 201 : texte = "                    Level 1 :                                                                                   Faron Temple"; break;
@@ -2388,7 +2388,7 @@ default:
         case 405 : texte = "She indicated to him his last hope : a portal to a secret world..."; break;
         case 406 : texte = "Game saved."; break;
         case 407 : texte = "You don't need to drink this potion now."; break;
-        case 408 : texte = "HELP : Press L+SQUARE to see the help."; break;
+        case 408 : texte = "HELP : Press L and Square to see the help."; break;
         case 409 : texte = "Grrrr... But how could you escape from the world of the deads and arrive here???"; idsuiv=410; break;
         case 410 : texte = "Why do you persist to challenge me? *Even if you strike me down I will always return to life."; idsuiv=411; break;
         case 411 : texte = "Your quest is vain, abandon all hope! **Let's rock, baby!"; break;
