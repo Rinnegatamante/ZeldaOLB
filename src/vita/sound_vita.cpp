@@ -143,10 +143,10 @@ static int audioThread(unsigned int args, void* arg){
 					
 					// Releasing the audio file
 					audio_decoder[id].reset();
+					mus->isPlaying = false;
 					if (mus->tempBlock){
 						mus = NULL;
 					}else{
-						mus->handle = fopen(mus->filepath,"rb");
 						mus->audioThread = 0xFF;
 					}
 					if (id < 7) availThreads[id] = true;
@@ -269,7 +269,6 @@ void FSOUND_SetSFXMasterVolume(uint8_t volson)
 
 void FSOUND_PlaySound(int chl,FSOUND_SAMPLE* s)
 {
-	return;
 	if(!s || !s->used || !soundEnabled || s->isPlaying || SFXMasterVolume == 0)return;
 	
 	// Wait till a thread is available

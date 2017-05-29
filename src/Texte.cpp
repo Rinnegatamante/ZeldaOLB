@@ -197,8 +197,8 @@ case 2: // French
         case 128 : texte = "Tu ne dois pas te transformer ici !!!"; break;
         case 129 : texte = "Tu ne peux pas entrer dans ce village sous cette apparence !!!"; break;
         case 130 : texte = "Link, c'est Pit. Je te parle par télépathie. Tu ne dois en aucun cas te transformer dans un village !*Je te téléporte à l'extérieur."; break;
-        case 131 : texte = "Tu as trouvé une épée !!!**Appuie sur W pour attaquer ou maintiens W pour charger une super attaque."; break;
-        case 132 : texte = "Tu as trouvé la carte !!!**Appuie sur P pour voir le plan du donjon."; break;
+        case 131 : texte = "Tu as trouvé une épée !!!**Appuie sur O pour attaquer ou maintiens O pour charger une super attaque."; break;
+        case 132 : texte = "Tu as trouvé la carte !!!**Appuie sur Start pour voir le plan du donjon."; break;
         case 133 : texte = "Tu as trouvé la boussole !!!**Les coffres et le boss du donjon sont désormais indiqués sur la carte."; break;
         case 134 : texte = "Tu as trouvé la clé du boss !!!**Sers-t'en pour accéder à son repaire."; break;
         case 135 : texte = "Tu as trouvé une petite clé.**Sers-t'en pour déverrouiller une porte."; break;
@@ -613,7 +613,7 @@ case 2: // French
         case 398 : texte = "Aide aux Graphismes :                                                                                           Harvestland"; break;
         case 399 : texte = "Aide aux Graphismes :                                                                                         Solène Jouillat"; break;
         case 400 : texte = "Illustrateur :                                                                                             Adrien Batis (Raiden)"; break;
-        case 401 : texte = "Tu as trouvé la carte de Termina !!!**Appuie sur P lorsque tu es à l'extérieur pour la visualiser."; break;
+        case 401 : texte = "Tu as trouvé la carte de Termina !!!**Appuie sur Start lorsque tu es à l'extérieur pour la visualiser."; break;
         case 402 : texte = "La légende oublie qu'à la suite de ces évènements son héros fut frappé par une terrible malédiction..."; idsuiv=403; break;
         case 403 : texte = "Jour après jour, Link se transformait en un monstre au pouvoir destructeur incontrôlable surnommé Oni-Link..."; idsuiv=404; break;
         case 404 : texte = "Banni d'Hyrule, Link demanda conseil à la Princesse Zelda."; idsuiv=405; break;
@@ -787,8 +787,8 @@ case 4: //Italian
         case 128 : texte = "You must not transform yourself here!!!"; break;
         case 129 : texte = "You cannot go in this village with this appearance !!!"; break;
         case 130 : texte = "Link, it's Pit. I am talking with you by telepathy. You must under no circumstances transform yourself in a village!*I will teleport you outside."; break;
-        case 131 : texte = "You find a sword!!!**Press Z (or W) to attack or hold Z (or W) to charg a spin attack."; break;
-        case 132 : texte = "You find the Map!!!*Press P to see the map of the Dungeon."; break;
+        case 131 : texte = "You find a sword!!!**Press O to attack or hold O to charge a spin attack."; break;
+        case 132 : texte = "You find the Map!!!*Press Start to see the map of the Dungeon."; break;
         case 133 : texte = "You find the Compass!!!**The Boss and chests are now indicated on the map."; break;
         case 134 : texte = "You find the Boss Key.**Use it to reach his haunt."; break;
         case 135 : texte = "You find a small key.**Use it to unlock a door."; break;
@@ -1202,7 +1202,7 @@ case 4: //Italian
         case 398 : texte = "Help to the Graphics :                                                                                          Harvestland"; break;
         case 399 : texte = "Help to the Graphics :                                                                                        Solène Jouillat"; break;
         case 400 : texte = "Illustrator :                                                                                                      Raiden"; break;
-        case 401 : texte = "You find the Termina map!!!**Press P when you are outside to see it."; break;
+        case 401 : texte = "You find the Termina map!!!**Press Start when you are outside to see it."; break;
         case 402 : texte = "The legend forgets that after these events, the hero was brought down by a terrible curse..."; idsuiv=403; break;
         case 403 : texte = "Day by day, Link was transforming into an incontrollable and destructive powered monster named Oni-Link..."; idsuiv=404; break;
         case 404 : texte = "Banished from Hyrule, Link asked for advice from Princess Zelda."; idsuiv=405; break;
@@ -1376,8 +1376,8 @@ case 5: // Spanish
         case 128 : texte = "No puedes transformarte aquí !!!"; break;
         case 129 : texte = "No puedes entrar en un pueblo con esta apariencia !!!"; break;
         case 130 : texte = "Link, soy Pit. Te hablo por telepatía. No debes en ningún caso transformarte en un pueblo !*Te teletransporto fuera."; break;
-        case 131 : texte = "Has encontrado una espada !!!**Pulsa Z (o W) para atacar o manten Z para cargar un ataque genial."; break;
-        case 132 : texte = "Has encontrado el mapa !!!**Pulsa P para ver el mapa del calabozo."; break;
+        case 131 : texte = "Has encontrado una espada !!!**Pulsa O para atacar o manten O para cargar un ataque genial."; break;
+        case 132 : texte = "Has encontrado el mapa !!!**Pulsa Start para ver el mapa del calabozo."; break;
         case 133 : texte = "Has encontrado la brújula !!!**Las arcas y el jefe del calabozo se ven ahora sobre el mapa."; break;
         case 134 : texte = "Has encontrado la llave del jefe !!!**Utilízala para llevar a su antro."; break;
         case 135 : texte = "Has encontrado una llave pequeña.**Utilízala para abrir una puerta."; break;
@@ -1792,7 +1792,7 @@ case 5: // Spanish
         case 398 : texte = "Ayuda con los Grafismos :                                                                                      Harvestland"; break;
         case 399 : texte = "Ayuda con los Grafismos :                                                                                    Solène Jouillat"; break;
         case 400 : texte = "Ilustrador :                                                                                                      Raiden"; break;
-        case 401 : texte = "Has encontrado el mapa de Termina !!!**Pulsa P cuando estas fuera para mirarlo."; break;
+        case 401 : texte = "Has encontrado el mapa de Termina !!!**Pulsa Start cuando estas fuera para mirarlo."; break;
         case 402 : texte = "La leyenda olvida que después de estos acontecimientos su héroe fue presa de una terrible maldición..."; idsuiv=403; break;
         case 403 : texte = "Día a día, Link se transformaba en un monstruo con un poder destructor incontrolable nombrado Oni-Link..."; idsuiv=404; break;
         case 404 : texte = "Exiliado de Hyrule, Link pidió consejo a la Princesa Zelda."; idsuiv=405; break;
@@ -1966,8 +1966,8 @@ default:
         case 128 : texte = "You must not transform yourself here!!!"; break;
         case 129 : texte = "You cannot go in this village with this appearance !!!"; break;
         case 130 : texte = "Link, it's Pit. I am talking with you by telepathy. You must under no circumstances transform yourself in a village!*I will teleport you outside."; break;
-        case 131 : texte = "You find a sword!!!**Press Z (or W) to attack or hold Z (or W) to charg a spin attack."; break;
-        case 132 : texte = "You find the Map!!!*Press P to see the map of the Dungeon."; break;
+        case 131 : texte = "You find a sword!!!**Press O to attack or hold O to charge a spin attack."; break;
+        case 132 : texte = "You find the Map!!!*Press Start to see the map of the Dungeon."; break;
         case 133 : texte = "You find the Compass!!!**The Boss and chests are now indicated on the map."; break;
         case 134 : texte = "You find the Boss Key.**Use it to reach his haunt."; break;
         case 135 : texte = "You find a small key.**Use it to unlock a door."; break;
@@ -2381,7 +2381,7 @@ default:
         case 398 : texte = "Help to the Graphics :                                                                                          Harvestland"; break;
         case 399 : texte = "Help to the Graphics :                                                                                        Solène Jouillat"; break;
         case 400 : texte = "Illustrator :                                                                                                      Raiden"; break;
-        case 401 : texte = "You find the Termina map!!!**Press P when you are outside to see it."; break;
+        case 401 : texte = "You find the Termina map!!!**Press Start when you are outside to see it."; break;
         case 402 : texte = "The legend forgets that after these events, the hero was brought down by a terrible curse..."; idsuiv=403; break;
         case 403 : texte = "Day by day, Link was transforming into an incontrollable and destructive powered monster named Oni-Link..."; idsuiv=404; break;
         case 404 : texte = "Banished from Hyrule, Link asked for advice from Princess Zelda."; idsuiv=405; break;
