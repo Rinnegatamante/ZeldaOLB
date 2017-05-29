@@ -72,11 +72,14 @@ void Generique::initLogo() {
 }
 
 void Generique::initTitre() {
-    SDL_Rect dst;
+	SDL_Rect dst;
+    SDL_Surface* fond = IMG_Load("app0:/images/logos/fond.png");
+    dst.x = 0; dst.y = 0; SDL_BlitSurface(fond, NULL, image, &dst);
+    SDL_FreeSurface(fond);
     SDL_Surface* logo = IMG_Load("app0:/images/logos/titre.png");
     SDL_SetColorKey(logo,SDL_SRCCOLORKEY,SDL_MapRGB(logo->format,0,0,255));
-//    logo = SDL_DisplayFormat(logo);
-    dst.x = 86; dst.y = 45; SDL_BlitSurface(logo, NULL, imageTitre, &dst);
+ //   logo = SDL_DisplayFormat(logo);
+    dst.x = 86; dst.y = 45; SDL_BlitSurface(logo, NULL, image, &dst);
     SDL_FreeSurface(logo);
 }
 
