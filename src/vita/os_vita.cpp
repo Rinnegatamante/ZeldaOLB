@@ -10,6 +10,8 @@ uint8_t language = 1;
 extern vita2d_texture* fbo;
 uint64_t startTick;
 
+int _newlib_heap_size_user = 192 * 1024 * 1024;
+
 int SDL_Init(int flag) //returns 0 on success, -1 on failure 
 {
     vita2d_init();
@@ -40,6 +42,9 @@ int SDL_Init(int flag) //returns 0 on success, -1 on failure
 			break;
 	}
 	
+	// Starting audio
+	soundInit();
+	
 	// Setting start tick
 	startTick = sceKernelGetProcessTimeWide();
 	
@@ -53,6 +58,7 @@ int SDL_Init(int flag) //returns 0 on success, -1 on failure
 void SDL_Quit()
 {
 	vita2d_fini();
+	soundClose();
 }
 
 int SDL_GetTicks()

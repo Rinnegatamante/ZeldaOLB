@@ -45,7 +45,7 @@ static int audioThread(unsigned int args, void* arg){
 		sceKernelWaitSema((id == 7) ? Music_Mutex : Sound_Mutex, 1, NULL);
 		
 		// Setting thread as busy
-		availThreads[id] = false;
+		if (id < 7) availThreads[id] = false;
 		
 		// Fetching track
 		mus = ((id == 7) ? new_music : new_sound);
@@ -77,8 +77,8 @@ static int audioThread(unsigned int args, void* arg){
 		audio_decoder[id]->SetFormat(48000, AudioDecoder::Format::S16, 2);
 		
 		// Initializing audio buffers
-		mus->audiobuf = (uint8_t*)malloc(BUFSIZE);
-		mus->audiobuf2 = (uint8_t*)malloc(BUFSIZE);
+		memset(mus->audiobuf, 0, BUFSIZE);
+		memset(mus->audiobuf2, 0, BUFSIZE);
 		mus->cur_audiobuf = mus->audiobuf;
 		
 		// Audio playback loop
@@ -89,12 +89,12 @@ static int audioThread(unsigned int args, void* arg){
 			
 				// Check if the music must be closed
 				if (mus->closeTrigger){
-					free(mus->audiobuf);
-					free(mus->audiobuf2);
 					audio_decoder[id].reset();
 					mus->isPlaying = false;
+					mus->pauseTrigger = false;
+					mus->closeTrigger = false;
 					mus = NULL;
-					availThreads[id] = true;
+					if (id < 7) availThreads[id] = true;
 					if (!mustExit) break;
 				}
 				
@@ -144,14 +144,12 @@ static int audioThread(unsigned int args, void* arg){
 					// Releasing the audio file
 					audio_decoder[id].reset();
 					if (mus->tempBlock){
-						free(mus->audiobuf);
-						free(mus->audiobuf2);
 						mus = NULL;
 					}else{
 						mus->handle = fopen(mus->filepath,"rb");
 						mus->audioThread = 0xFF;
 					}
-					availThreads[id] = true;
+					if (id < 7) availThreads[id] = true;
 					break;
 					
 				}else sceKernelDelayThread(1000); // Tricky way to call a re-scheduling
@@ -170,6 +168,9 @@ void soundInit()
 	for(i=0;i<NUMSFX;i++)
 	{
 		SFX[i].used=false;
+		SFX[i].audiobuf = (uint8_t*)malloc(BUFSIZE);
+		SFX[i].audiobuf2 = (uint8_t*)malloc(BUFSIZE);
+		
 	}
 	
 	// Creating audio mutexs
@@ -180,7 +181,7 @@ void soundInit()
 
 	// Starting audio threads
 	for (int i=0;i < (SOUND_CHANNELS + 1); i++){
-		if (i < 7) availThreads[i] = true;
+		if (i < SOUND_CHANNELS) availThreads[i] = true;
 		AudioThreads[i] = sceKernelCreateThread("Audio Thread", &audioThread, 0x10000100, 0x10000, 0, 0, NULL);
 		sceKernelStartThread(AudioThreads[i], sizeof(ids[i]), &ids[i]);
 	}
@@ -198,7 +199,7 @@ void soundClose()
 		sceKernelWaitThreadEnd(AudioThreads[i], NULL, NULL);
 	}
 	sceKernelSignalSema(Music_Mutex, 1);
-	sceKernelWaitThreadEnd(AudioThreads[7], NULL, NULL);
+	sceKernelWaitThreadEnd(AudioThreads[SOUND_CHANNELS], NULL, NULL);
 	mustExit = false;
 		
 	// Deleting audio mutex
@@ -213,6 +214,8 @@ void soundClose()
 		if(SFX[i].used)
 		{
 			SFX[i].used=false;
+			free(SFX[i].audiobuf);
+			free(SFX[i].audiobuf2);
 		}
 	}
 
@@ -266,6 +269,7 @@ void FSOUND_SetSFXMasterVolume(uint8_t volson)
 
 void FSOUND_PlaySound(int chl,FSOUND_SAMPLE* s)
 {
+	return;
 	if(!s || !s->used || !soundEnabled || s->isPlaying || SFXMasterVolume == 0)return;
 	
 	// Wait till a thread is available
@@ -305,8 +309,9 @@ void FMUSIC_StopSong(FMUSIC_MODULE* s)
 
 void FMUSIC_PlaySong(FMUSIC_MODULE* s)
 {
-	if(!s || !s->used || !soundEnabled || MasterVolume == 0)return;
 
+	if(!s || !s->used || s->isPlaying || !soundEnabled || MasterVolume == 0)return;
+	
 	FILE* f = fopen(s->filepath, "rb");
 	s->handle = f;
 	if (s->handle == NULL) return;
@@ -336,7 +341,7 @@ FSOUND_SAMPLE* FSOUND_Sample_Load(int flag, const char * f,int a, int b, int c)
 			loadSFX(&SFX[i], f, 0);
 
 			SFX[i].used = true;
-			SFX[i].loop=false;
+			SFX[i].loop = false;
 			return &SFX[i];
 		}
 	}
