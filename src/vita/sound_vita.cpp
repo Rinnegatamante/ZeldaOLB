@@ -76,6 +76,12 @@ static int audioThread(unsigned int args, void* arg){
 		audio_decoder[id]->SetLooping(mus->loop);
 		audio_decoder[id]->SetFormat(48000, AudioDecoder::Format::S16, 2);
 		
+		// Checking resampler output mode
+		int rate, chns;
+		AudioDecoder::Format fmt;
+		audio_decoder[id]->GetFormat(rate, fmt, chns);
+		sceAudioOutSetConfig(ch, -1, -1, chns - 1);
+		
 		// Initializing audio buffers
 		memset(mus->audiobuf, 0, BUFSIZE);
 		memset(mus->audiobuf2, 0, BUFSIZE);
@@ -391,5 +397,8 @@ void FMUSIC_FreeSong(FMUSIC_MODULE* s)
 	if(s) {
 		s->used=false;
 		s->loop=false;
+		s->closeTrigger = true;
+		s->pauseTrigger = true;
+		while (s->isPlaying){}
 	}
 }

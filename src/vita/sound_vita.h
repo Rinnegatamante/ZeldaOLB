@@ -3,7 +3,7 @@
 #define __SOUND_VITA_H__
 
 #define FSOUND_FREE 1
-#define NUMSFX (45)
+#define NUMSFX (50)
 
 #include <stdio.h>
 #include <stdlib.h>
