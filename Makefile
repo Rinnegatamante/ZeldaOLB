@@ -1,4 +1,4 @@
-TARGET		:= Zelda
+TARGET		:= ZeldaOLB
 SOURCES		:= src src/vita
 INCLUDES	:= include
 
@@ -19,11 +19,18 @@ CFLAGS  = -fno-lto -g -Wl,-q -O3 -D_PSP2_NPDRMPACKAGE_H_ -DHAVE_LIBSPEEXDSP \
 			-DWANT_FMMIDI=1 -DUSE_AUDIO_RESAMPLER -DHAVE_OGGVORBIS
 CXXFLAGS  = $(CFLAGS) -fno-rtti -fno-exceptions -std=gnu++11 -fpermissive -findirect-inlining
 ASFLAGS = $(CFLAGS)
+	
+all: $(TARGET).vpk
 
-all: $(TARGET).velf
+$(TARGET).vpk: $(TARGET).velf
+	vita-mksfoex -s TITLE_ID=ZELDAOLB1 "Zelda: Oni Link Begins" param.sfo
+	cp -f param.sfo sce_sys/param.sfo
+	
+	#------------ Comment this if you don't have 7zip ------------------
+	7z a -tzip $(TARGET).vpk -r images/* map/* music/* sound/* sce_sys/* eboot.bin 
+	#-------------------------------------------------------------------
 
 %.velf: %.elf
-	vita-mksfoex -s TITLE_ID=ZELDAOLB1 "Zelda: Oni Link Begins" param.sfo
 	cp $< $<.unstripped.elf
 	$(PREFIX)-strip -g $<
 	vita-elf-create $< $@
@@ -33,4 +40,4 @@ $(TARGET).elf: $(OBJS)
 	$(CXX) $(CXXFLAGS) $^ $(LIBS) -o $@
 
 clean:
-	@rm -rf $(TARGET).velf $(TARGET).elf $(OBJS)
+	@rm -rf $(TARGET).velf $(TARGET).elf $(OBJS) param.sfo $(TARGET).vpk
