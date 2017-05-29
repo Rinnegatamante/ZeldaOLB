@@ -33,7 +33,10 @@ void endTopFrame(void)
 		}
 		vita2d_end_drawing();
 		vita2d_start_drawing_advanced(NULL, VITA_2D_SCENE_VERTEX_WAIT_FOR_DEPENDENCY);
+		vita2d_clear_screen();
 		vita2d_draw_texture_scale(fbo,27,0,2.2666,2.2666);
+		vita2d_draw_rectangle(0, 0, 27, 544, RGBA8(0, 0, 0, 0xff));
+		vita2d_draw_rectangle(933, 0, 27, 544, RGBA8(0, 0, 0, 0xff));
 		vita2d_end_drawing();
 	}
 	drawing = false;
@@ -60,8 +63,8 @@ SDL_Surface* SDL_SetVideoMode(int width, int height, int bpp, int flag)
 		scalepos = 1; 
 		scalewidth = 1; 
 	}
-	if (width == 320) return (SDL_Surface*) 2;
-	else return (SDL_Surface*) 1;
+	/*if (width == 320) return (SDL_Surface*) 2;
+	else*/ return (SDL_Surface*) 1;
 }
 
 SDL_Surface* IMG_Load(const char* f)
@@ -90,7 +93,7 @@ SDL_Surface* SDL_CreateRGBSurface(int type, int width, int height, int bpp, int 
     SDL_Surface* s;
 	s = (SDL_Surface*) malloc(sizeof(SDL_Surface));
 	if(!s) return NULL;
-	s->texture = vita2d_create_empty_texture_format(width, height, SCE_GXM_TEXTURE_FORMAT_U8U8U8U8_RGBA);
+	s->texture = vita2d_create_empty_texture_format(width, height, SCE_GXM_TEXTURE_FORMAT_U8U8U8U8_ABGR);
 	if (s->texture) {
 		s->w = vita2d_texture_get_width(s->texture);
 		s->h = vita2d_texture_get_height(s->texture);
@@ -128,7 +131,6 @@ uint32_t SDL_MapRGB(int flag , uint8_t r, uint8_t g, uint8_t b)
 {
     return RGBA8(r, g, b, 0xff);
 }
-
 
 void SDL_FillRect(SDL_Surface* s, SDL_Rect* rect, uint32_t color)
 {
@@ -210,9 +212,8 @@ void SDL_BlitSurface(SDL_Surface* s, SDL_Rect * src, SDL_Surface* d, SDL_Rect * 
 				for (i=0;i< sw; i++)
 					for (j=0;j< sh; j++) {
 						pixel = vita2d_texture_get_pixel ( s->texture,i+sx,j+sy);
-						if (pixel & 0xff) vita2d_texture_set_pixel(d->texture,i+dx,j+dy,pixel); 		
+						if ((pixel >> 24) & 0xff) vita2d_texture_set_pixel(d->texture,i+dx,j+dy,pixel); 		
 					}
 			}
 	}
 }
-
