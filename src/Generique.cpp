@@ -133,7 +133,6 @@ case 2: // French
     gpJeu->affiche(image, "RECORDS", 215, 200);
 break;
 
-/*
 case 4: // Italian
     gpJeu->affiche(image, "SALVATAGGI", 40, 16);
     gpJeu->affiche(image, "1.", 44, 56);
@@ -142,7 +141,7 @@ case 4: // Italian
     gpJeu->affiche(image, "OPZIONI", 63, 200);
     gpJeu->affiche(image, "RECORD", 215, 200);
 break;
-*/
+
 case 5: // Spanish
     gpJeu->affiche(image, "SELECCION", 40, 16);
     gpJeu->affiche(image, "1.", 44, 56);
@@ -337,7 +336,6 @@ case 2: // French
     gpJeu->affiche(image, "EFFACER", 215, 200);
 break;
 
-/*
 case 4: // Italian
     gpJeu->affiche(image, "RECORD", 40, 16);
     gpJeu->affiche(image, "MIGLIOR TEMPO: " + oss.str(), 140, 16);
@@ -347,7 +345,7 @@ case 4: // Italian
     gpJeu->affiche(image, "INDIETRO", 63, 200);
     gpJeu->affiche(image, "CANCELLA", 215, 200);
 break;
-*/
+
 case 5: // Spanish
     gpJeu->affiche(image, "RECORDS", 40, 16);
     gpJeu->affiche(image, "MEJOR TIEMPO : " + oss.str(), 140, 16);
@@ -392,16 +390,54 @@ break;
 
 void Generique::initEffacer() {
     cadre(104,84,112,72);
-    gpJeu->affiche(image, "ERASE ?", 133, 93);
-    gpJeu->affiche(image, "YES", 151, 113);
-    gpJeu->affiche(image, "NO", 151, 133);
+	switch(getLanguage()) {
+		case 2: // French
+			gpJeu->affiche(image, "EFFACER ?", 133, 93);
+			gpJeu->affiche(image, "OUI", 151, 113);
+			gpJeu->affiche(image, "NO", 151, 133);
+			break;
+		case 4: // Italian
+			gpJeu->affiche(image, "ELIMINARE ?", 133, 93);
+			gpJeu->affiche(image, "SI", 151, 113);
+			gpJeu->affiche(image, "NO", 151, 133);
+			break;
+		case 5: // Spanish
+			gpJeu->affiche(image, "BORRAR ?", 133, 93);
+			gpJeu->affiche(image, "SI", 151, 113);
+			gpJeu->affiche(image, "NO", 151, 133);
+			break;
+		default:
+			gpJeu->affiche(image, "ERASE ?", 133, 93);
+			gpJeu->affiche(image, "YES", 151, 113);
+			gpJeu->affiche(image, "NO", 151, 133);
+			break;
+	}
 }
 
 void Generique::initCharger() {
     cadre(104,84,112,72);
-    gpJeu->affiche(image, "LOAD", 139, 93);
-    gpJeu->affiche(image, "ERASE", 139, 113);
-    gpJeu->affiche(image, "CANCEL", 139, 133);
+	switch(getLanguage()){
+		case 2: // French
+			gpJeu->affiche(image, "CHARGE", 139, 93);
+			gpJeu->affiche(image, "EFFACER", 139, 113);
+			gpJeu->affiche(image, "ANNULER", 139, 133);
+			break;
+		case 4: // Italian
+			gpJeu->affiche(image, "CARICA", 139, 93);
+			gpJeu->affiche(image, "ELIMINA", 139, 113);
+			gpJeu->affiche(image, "ANNULLA", 139, 133);
+			break;
+		case 5: // Spanish
+			gpJeu->affiche(image, "CARGA", 139, 93);
+			gpJeu->affiche(image, "BORRAR", 139, 113);
+			gpJeu->affiche(image, "CANCELAR", 139, 133);
+			break;
+		default:
+			gpJeu->affiche(image, "LOAD", 139, 93);
+			gpJeu->affiche(image, "ERASE", 139, 113);
+			gpJeu->affiche(image, "CANCEL", 139, 133);
+			break;
+	}
 }
 
 void Generique::initIntro() {
@@ -509,47 +545,46 @@ case 2: // French
 
 break;
 
-/*
 case 4: // Italian
-    gpJeu->affiche(image, "HELP 1/2", 40, 16);
+    gpJeu->affiche(image, "AIUTO 1/2", 40, 16);
     
-    gpJeu->affiche(image, "Ritorna al gioco: A - Prossimo: Destra", 24, 208);
+    gpJeu->affiche(image, "Ritorna al gioco: X - Prossimo: Destra", 24, 208);
     
-    gpJeu->affiche(image, "Leggi / Apri / Parla: A", 24, ligne); ligne+=16;
-    gpJeu->affiche(image, "Conferma / Chiudi testo: A", 24, ligne); ligne+=16;
+    gpJeu->affiche(image, "Leggi / Apri / Parla: X", 24, ligne); ligne+=16;
+    gpJeu->affiche(image, "Conferma / Chiudi testo: X", 24, ligne); ligne+=16;
     gpJeu->affiche(image, "Muovere Link: pad direzionale", 24, ligne); ligne+=16;
     if (gpJoueur->hasObjet(O_BOTTES)) {
         gpJeu->affiche(image, "Correre: R e pad direzionale", 24, ligne); 
         ligne+=16;}
     if (gpJoueur->getEpee()) {
-        gpJeu->affiche(image, "Usa la spada: B", 24, ligne); ligne+=16;
-        gpJeu->affiche(image, "Attacco rotante: trattieni B poi lascia", 24, ligne); 
+        gpJeu->affiche(image, "Usa la spada: O", 24, ligne); ligne+=16;
+        gpJeu->affiche(image, "Attacco rotante: trattieni O poi lascia", 24, ligne); 
         ligne+=16;}
-    gpJeu->affiche(image, "Selezione oggetto: L e START", 24, ligne); ligne+=16;
+    gpJeu->affiche(image, "Selezione oggetto: L e Start", 24, ligne); ligne+=16;
     if (ligne >= 176) return;
-    gpJeu->affiche(image, "Usa oggetto selezionato: Y", 24, ligne); ligne+=16;
+    gpJeu->affiche(image, "Usa oggetto selezionato: Quadrato", 24, ligne); ligne+=16;
     if (ligne >= 176) return;
     if (gpJoueur->hasObjet(O_GANTS)) {
-        gpJeu->affiche(image, "Solleva: X", 24, ligne); 
+        gpJeu->affiche(image, "Solleva: Triangolo", 24, ligne); 
         ligne+=16;}
     if (ligne >= 176) return;
     if (gpJoueur->hasObjet(O_CARTE))
-        gpJeu->affiche(image, "Apri la mappa: START (fuori dai templi)", 24, ligne);
-    else gpJeu->affiche(image, "Apri la mappa: START (nei templi)", 24, ligne);
+        gpJeu->affiche(image, "Apri la mappa: Start (fuori dai templi)", 24, ligne);
+    else gpJeu->affiche(image, "Apri la mappa: Start (nei templi)", 24, ligne);
     ligne+=16;
     if (ligne >= 176) return;
     if (gpJoueur->hasObjet(O_ENCYCL)) {
-        gpJeu->affiche(image, "Gurda mostri uccisi: L e B", 24, ligne); 
+        gpJeu->affiche(image, "Gurda mostri uccisi: L e O", 24, ligne); 
         ligne+=16;}
     if (ligne >= 176) return;
     gpJeu->affiche(image, "Guarda intorno: L e direzione", 24, ligne); ligne+=16;
     if (ligne >= 176) return;
-    gpJeu->affiche(image, "Allarga / Riduci: L e A", 24, ligne); ligne+=16;
+    gpJeu->affiche(image, "Allarga / Riduci: L e X", 24, ligne); ligne+=16;
     if (ligne >= 176) return;
-    gpJeu->affiche(image, "Salva / Esci: SELECT", 24, ligne); ligne+=16;
+    gpJeu->affiche(image, "Salva / Esci: Select", 24, ligne); ligne+=16;
 
 break;
-*/
+
 case 5: // Spanish
     gpJeu->affiche(image, "AYUDA 1/2", 40-3, 16);
     
@@ -570,7 +605,7 @@ case 5: // Spanish
     gpJeu->affiche(image, "Utilizar el objeto seleccionnado : Cuadrado", 24, ligne); ligne+=16;
     if (ligne >= 176) return;
     if (gpJoueur->hasObjet(O_GANTS)) {
-        gpJeu->affiche(image, "Levantar : Triangle", 24, ligne); 
+        gpJeu->affiche(image, "Levantar : Triángulo", 24, ligne); 
         ligne+=16;}
     if (ligne >= 176) return;
     if (gpJoueur->hasObjet(O_CARTE))
@@ -704,38 +739,38 @@ case 2: // French
     gpJeu->affiche(image, "Sauvegarder / Quitter : Select", 24, ligne); ligne+=16;
 break;
 
-/*case 4: // Italian
-    gpJeu->affiche(image, "HELP 2/2", 40, 16);
+case 4: // Italian
+    gpJeu->affiche(image, "AIUTO 2/2", 40, 16);
     
-    gpJeu->affiche(image, "Ritorna al gioco: A - Precedente: Sinistra", 24, 208);
+    gpJeu->affiche(image, "Ritorna al gioco: X - Precedente: Sinistra", 24, 208);
     
     ligne+=64;
     if (gpJoueur->hasObjet(O_BOTTES)) ligne+=16;
     if (gpJoueur->getEpee()) ligne+=32;
     if (ligne >= 64) 
-    gpJeu->affiche(image, "Usa oggetto selezionato: Y", 24, ligne); ligne+=16;
+    gpJeu->affiche(image, "Usa oggetto selezionato: Quadrato", 24, ligne); ligne+=16;
     if (ligne >= 64) 
     if (gpJoueur->hasObjet(O_GANTS)) {
-        gpJeu->affiche(image, "Soleva : X", 24, ligne); 
+        gpJeu->affiche(image, "Soleva : Triangolo", 24, ligne); 
         ligne+=16;}
     if (ligne >= 64) {
     if (gpJoueur->hasObjet(O_CARTE))
-        gpJeu->affiche(image, "Apri la mappa: START (fuori dai dungeon)", 24, ligne);
-    else gpJeu->affiche(image, "Apri la mappa: START (nei dungeon)", 24, ligne);}
+        gpJeu->affiche(image, "Apri la mappa: Start (fuori dai dungeon)", 24, ligne);
+    else gpJeu->affiche(image, "Apri la mappa: Start (nei dungeon)", 24, ligne);}
     ligne+=16;
     if (ligne >= 64) 
     if (gpJoueur->hasObjet(O_ENCYCL)) {
-        gpJeu->affiche(image, "Gurda mostri uccisi: L e B", 24, ligne); 
+        gpJeu->affiche(image, "Gurda mostri uccisi: L e O", 24, ligne); 
         ligne+=16;}
     if (ligne >= 64) 
     gpJeu->affiche(image, "Guarda intorno: L e direzione", 24, ligne); ligne+=16;
     if (ligne >= 64) 
-    gpJeu->affiche(image, "Allarga / Riduci: L e A", 24, ligne); ligne+=16;
+    gpJeu->affiche(image, "Allarga / Riduci: L e X", 24, ligne); ligne+=16;
     if (ligne >= 64) 
-    gpJeu->affiche(image, "Salva / Esci: SELECT", 24, ligne); ligne+=16;
+    gpJeu->affiche(image, "Salva / Esci: Select", 24, ligne); ligne+=16;
 
 break;
-*/
+
 case 5: // Spanish
     gpJeu->affiche(image, "AYUDA 2/2", 40-3, 16);
     
@@ -1031,7 +1066,6 @@ case 2: // French
     gpJeu->affiche(gpScreen, "RETOUR", 63, 200);
 break;
 
-/*
 case 4: // Italian
     gpJeu->affiche(gpScreen, "OPZIONI", 40, 16);
     gpJeu->affiche(gpScreen, "MUSICA", 60, 72);
@@ -1040,7 +1074,7 @@ case 4: // Italian
     gpJeu->affiche(gpScreen, "Italiano", 170, 158);
     gpJeu->affiche(gpScreen, "INDIETRO", 63-6, 200);
 break;
-*/
+
 case 5: // Spanish
    gpJeu->affiche(gpScreen, "OPCIONES", 40-1, 16);
     gpJeu->affiche(gpScreen, "MUSICA", 60, 72);
@@ -1061,7 +1095,7 @@ break;
 }
 
 	int languageID = getLanguage();
-	if (languageID<1 || languageID>5 || languageID==3 || languageID==4) 
+	if (languageID<1 || languageID>5 || languageID==3) 
 		languageID = 1;
 
     src.h = 21; src.w = 16;src.x = 0;src.y=0;
@@ -1171,5 +1205,3 @@ void Generique::drawFlag(SDL_Surface* gpScreen, int flagID){
     SDL_Rect dst; dst.x = 136; dst.y = 158;
     SDL_BlitSurface(imageFlags, &src, gpScreen, &dst);
 }
-
-

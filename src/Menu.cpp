@@ -419,11 +419,10 @@ case 2: // French
     gpJeu->affiche(gpScreen, "STATUT:", 148,20-dec);
 break;
 
-/*
 case 4: // Italian
     gpJeu->affiche(gpScreen, "STATO:", 148,20-dec);
 break;
-*/
+
 case 5: // Spanish
     gpJeu->affiche(gpScreen, "ESTATUTO:", 148,20-dec);
 break;
@@ -442,10 +441,10 @@ case 2: // French
     gpJeu->affiche(gpScreen, "VIE       : " + oss.str(), 148,36-dec+8);
 break;
 
-/*case 4: // Italian
+case 4: // Italian
     gpJeu->affiche(gpScreen, "VITA      : " + oss.str(), 148,36-dec+8);
 break;
-*/
+
 case 5: // Spanish
     gpJeu->affiche(gpScreen, "VIDA      : " + oss.str(), 148,36-dec+8);
 break;
@@ -468,10 +467,10 @@ case 2: // French
         gpJeu->affiche(gpScreen, "MAGIE     : " + oss.str(), 148,i-dec);
 break;
 
-/*case 4: // Italian
+case 4: // Italian
         gpJeu->affiche(gpScreen, "MAGIA     : " + oss.str(), 148,i-dec);
 break;
-*/
+
 case 5: // Spanish
         gpJeu->affiche(gpScreen, "MAGIA     : " + oss.str(), 148,i-dec);
 break;
@@ -500,10 +499,10 @@ case 2: // French
     gpJeu->affiche(gpScreen, "FORCE     : " + oss.str(), 148,i-dec);
 break;
 
-/*case 4: // Italian
+case 4: // Italian
     gpJeu->affiche(gpScreen, "FORZA     : " + oss.str(), 148,i-dec);
 break;
-*/
+
 case 5: // Spanish
     gpJeu->affiche(gpScreen, "STRENGTH  : " + oss.str(), 148,i-dec);
 break;
@@ -520,11 +519,11 @@ case 2: // French
     gpJeu->affiche(gpScreen, "DEFENSE   : " + oss.str(), 148,i-dec);
 break;
 
-/*
+
 case 4: // Italian
     gpJeu->affiche(gpScreen, "DIFESA    : " + oss.str(), 148,i-dec);
 break;
-*/
+
 case 5: // Spanish
     gpJeu->affiche(gpScreen, "DEFENSA   : " + oss.str(), 148,i-dec);
 break;
@@ -546,11 +545,10 @@ case 2: // French
     gpJeu->affiche(gpScreen, "TEMPS     : " + oss.str(), 148,i-dec);
 break;
 
-/*
 case 4: // Italian
     gpJeu->affiche(gpScreen, "TEMPO     : " + oss.str(), 148,i-dec);
 break;
-*/
+
 case 5: // Spanish
     gpJeu->affiche(gpScreen, "TIEMPO    : " + oss.str(), 148,i-dec);
 break;
