@@ -839,46 +839,168 @@ void Generique::initRang(int i) {
     
     switch (i) {
         case 0 :
-            cadre(72,96,176,48);
-            if (gpJeu->getKeyboard()->getRang(i) && gpJeu->getKeyboard()->getRang(i+3)) 
-                gpJeu->affiche(image, "RANK : Hero of Two Worlds", 80, 104);
-            else if (gpJeu->getKeyboard()->getRang(i) && !gpJeu->getKeyboard()->getRang(i+3)) 
-                gpJeu->affiche(image, "RANK : Heros of Hyrule", 80, 104);
-            else if (!gpJeu->getKeyboard()->getRang(i) && gpJeu->getKeyboard()->getRang(i+3)) 
-                gpJeu->affiche(image, "RANK : Hero of Termina", 80, 104);
-            else gpJeu->affiche(image, "RANK : UNKNOWN", 80, 104);
-            gpJeu->affiche(image, "100% complete the game", 80, 120);
-            break;
+			cadre(72,96,176,48);
+			switch (getLanguage()){
+				case 2: // French
+					if (gpJeu->getKeyboard()->getRang(i) && gpJeu->getKeyboard()->getRang(i+3)) 
+						gpJeu->affiche(image, "RANG : Héros de Deux Mondes", 80, 104);
+					else if (gpJeu->getKeyboard()->getRang(i) && !gpJeu->getKeyboard()->getRang(i+3)) 
+						gpJeu->affiche(image, "RANG : Héros de Hyrule", 80, 104);
+					else if (!gpJeu->getKeyboard()->getRang(i) && gpJeu->getKeyboard()->getRang(i+3)) 
+						gpJeu->affiche(image, "RANG : Héros de Termina", 80, 104);
+					else gpJeu->affiche(image, "RANG : INCONNU", 80, 104);
+						gpJeu->affiche(image, "Complète le jeu au 100%", 80, 120);
+					break;
+				case 4: // Italian
+					if (gpJeu->getKeyboard()->getRang(i) && gpJeu->getKeyboard()->getRang(i+3)) 
+						gpJeu->affiche(image, "RANGO : Eroe dei Due Mondi", 80, 104);
+					else if (gpJeu->getKeyboard()->getRang(i) && !gpJeu->getKeyboard()->getRang(i+3)) 
+						gpJeu->affiche(image, "RANGO : Eroe di Hyrule", 80, 104);
+					else if (!gpJeu->getKeyboard()->getRang(i) && gpJeu->getKeyboard()->getRang(i+3)) 
+						gpJeu->affiche(image, "RANGO : Eroe di Termina", 80, 104);
+					else gpJeu->affiche(image, "RANGO : SCONOSCIUTO", 80, 104);
+						gpJeu->affiche(image, "Completa il gioco al 100%", 80, 120);
+					break;
+				case 5: // Spanish
+					if (gpJeu->getKeyboard()->getRang(i) && gpJeu->getKeyboard()->getRang(i+3)) 
+						gpJeu->affiche(image, "RANGO : Héroe de Dos Mundos", 80, 104);
+					else if (gpJeu->getKeyboard()->getRang(i) && !gpJeu->getKeyboard()->getRang(i+3)) 
+						gpJeu->affiche(image, "RANGO : Héroe de Hyrule", 80, 104);
+					else if (!gpJeu->getKeyboard()->getRang(i) && gpJeu->getKeyboard()->getRang(i+3)) 
+						gpJeu->affiche(image, "RANGO : Héroe de Termina", 80, 104);
+					else gpJeu->affiche(image, "RANGO : DESCONOSCIDO", 80, 104);
+						gpJeu->affiche(image, "Completar el juego a 100%", 80, 120);
+					break;
+				default:
+					if (gpJeu->getKeyboard()->getRang(i) && gpJeu->getKeyboard()->getRang(i+3)) 
+						gpJeu->affiche(image, "RANK : Hero of Two Worlds", 80, 104);
+					else if (gpJeu->getKeyboard()->getRang(i) && !gpJeu->getKeyboard()->getRang(i+3)) 
+						gpJeu->affiche(image, "RANK : Heros of Hyrule", 80, 104);
+					else if (!gpJeu->getKeyboard()->getRang(i) && gpJeu->getKeyboard()->getRang(i+3)) 
+						gpJeu->affiche(image, "RANK : Hero of Termina", 80, 104);
+					else gpJeu->affiche(image, "RANK : UNKNOWN", 80, 104);
+						gpJeu->affiche(image, "100% complete the game", 80, 120);
+					break;
+			}
+			break;
         case 1 :
             cadre(64-16,56,192+32,128);
             int l; l=64;
-            if (gpJeu->getKeyboard()->getRang(i) && gpJeu->getKeyboard()->getRang(i+3)) 
-                gpJeu->affiche(image, "RANG : Sword Master", 72-16, l);
-            else if (gpJeu->getKeyboard()->getRang(i) && !gpJeu->getKeyboard()->getRang(i+3)) 
-                gpJeu->affiche(image, "RANG : Swanky", 72-16, l);
-            else if (!gpJeu->getKeyboard()->getRang(i) && gpJeu->getKeyboard()->getRang(i+3)) 
-                gpJeu->affiche(image, "RANG : Bigheaded", 72-16, l);
-            else gpJeu->affiche(image, "RANG : UNKNOWN", 72-16, l);
-            l+=16;
-            gpJeu->affiche(image, "Complete the game not dead,", 72-16, l);l+=16;
-            gpJeu->affiche(image, "with 15 hearts at the very most,", 72-16, l);l+=16;
-            gpJeu->affiche(image, "without talking to Great Fairies,", 72-16, l);l+=16;
-            gpJeu->affiche(image, "without buying a bottle", 72-16, l);l+=16;
-            gpJeu->affiche(image, "whithout changing your tunic", 72-16, l);l+=16;
-            gpJeu->affiche(image, "and without taking shield.", 72-16, l);l+=16;
-            break;
+            switch (getLanguage()){
+				case 2: // French
+					if (gpJeu->getKeyboard()->getRang(i) && gpJeu->getKeyboard()->getRang(i+3)) 
+						gpJeu->affiche(image, "RANG : Epée Master", 72-16, l);
+					else if (gpJeu->getKeyboard()->getRang(i) && !gpJeu->getKeyboard()->getRang(i+3)) 
+						gpJeu->affiche(image, "RANG : Esbroufon", 72-16, l);
+					else if (!gpJeu->getKeyboard()->getRang(i) && gpJeu->getKeyboard()->getRang(i+3)) 
+						gpJeu->affiche(image, "RANG : Grosse tete", 72-16, l);
+					else gpJeu->affiche(image, "RANG : ICONNU", 72-16, l);
+					l+=16;
+					gpJeu->affiche(image, "Complétez le jeu pas mort,", 72-16, l);l+=16;
+					gpJeu->affiche(image, "avec 15 coeurs au maximum,", 72-16, l);l+=16;
+					gpJeu->affiche(image, "sans parler avec Great Fairies,", 72-16, l);l+=16;
+					gpJeu->affiche(image, "sans acheter bouteilles,", 72-16, l);l+=16;
+					gpJeu->affiche(image, "sans changer votre tunique,", 72-16, l);l+=16;
+					gpJeu->affiche(image, "et sans prendre un bouclier.", 72-16, l);l+=16;
+					break;
+				case 4: // Italian
+					if (gpJeu->getKeyboard()->getRang(i) && gpJeu->getKeyboard()->getRang(i+3)) 
+						gpJeu->affiche(image, "RANGO : Spadaccino", 72-16, l);
+					else if (gpJeu->getKeyboard()->getRang(i) && !gpJeu->getKeyboard()->getRang(i+3)) 
+						gpJeu->affiche(image, "RANGO : Ostentato", 72-16, l);
+					else if (!gpJeu->getKeyboard()->getRang(i) && gpJeu->getKeyboard()->getRang(i+3)) 
+						gpJeu->affiche(image, "RANGO : Cervellone", 72-16, l);
+					else gpJeu->affiche(image, "RANGO : SCONOSCIUTO", 72-16, l);
+					l+=16;
+					gpJeu->affiche(image, "Completa il gioco senza morire,", 72-16, l);l+=16;
+					gpJeu->affiche(image, "con al massimo 15 cuori,", 72-16, l);l+=16;
+					gpJeu->affiche(image, "senza parlare alle Grandi Fate,", 72-16, l);l+=16;
+					gpJeu->affiche(image, "senza comprare bottiglie,", 72-16, l);l+=16;
+					gpJeu->affiche(image, "senza cambiare tunica,", 72-16, l);l+=16;
+					gpJeu->affiche(image, "e senza prendere lo scudo.", 72-16, l);l+=16;
+					break;
+				case 5: // Spanish
+					if (gpJeu->getKeyboard()->getRang(i) && gpJeu->getKeyboard()->getRang(i+3)) 
+						gpJeu->affiche(image, "RANGO : Espadero", 72-16, l);
+					else if (gpJeu->getKeyboard()->getRang(i) && !gpJeu->getKeyboard()->getRang(i+3)) 
+						gpJeu->affiche(image, "RANGO : Ostentoso", 72-16, l);
+					else if (!gpJeu->getKeyboard()->getRang(i) && gpJeu->getKeyboard()->getRang(i+3)) 
+						gpJeu->affiche(image, "RANGO : Engreído", 72-16, l);
+					else gpJeu->affiche(image, "RANGO : DESCONOSCIDO", 72-16, l);
+					l+=16;
+					gpJeu->affiche(image, "Completar el juego no muerto,", 72-16, l);l+=16;
+					gpJeu->affiche(image, "con 15 corazones en lo más,", 72-16, l);l+=16;
+					gpJeu->affiche(image, "sin hablar con Grandes Hadas,", 72-16, l);l+=16;
+					gpJeu->affiche(image, "sin comprar una botella,", 72-16, l);l+=16;
+					gpJeu->affiche(image, "sin cambiar tu túnica,", 72-16, l);l+=16;
+					gpJeu->affiche(image, "y sin tomar escudo.", 72-16, l);l+=16;
+					break;
+				default:
+					if (gpJeu->getKeyboard()->getRang(i) && gpJeu->getKeyboard()->getRang(i+3)) 
+						gpJeu->affiche(image, "RANK : Sword Master", 72-16, l);
+					else if (gpJeu->getKeyboard()->getRang(i) && !gpJeu->getKeyboard()->getRang(i+3)) 
+						gpJeu->affiche(image, "RANK : Swanky", 72-16, l);
+					else if (!gpJeu->getKeyboard()->getRang(i) && gpJeu->getKeyboard()->getRang(i+3)) 
+						gpJeu->affiche(image, "RANK : Bigheaded", 72-16, l);
+					else gpJeu->affiche(image, "RANK : UNKNOWN", 72-16, l);
+					l+=16;
+					gpJeu->affiche(image, "Complete the game not dead,", 72-16, l);l+=16;
+					gpJeu->affiche(image, "with 15 hearts at the very most,", 72-16, l);l+=16;
+					gpJeu->affiche(image, "without talking to Great Fairies,", 72-16, l);l+=16;
+					gpJeu->affiche(image, "without buying a bottle", 72-16, l);l+=16;
+					gpJeu->affiche(image, "whithout changing your tunic", 72-16, l);l+=16;
+					gpJeu->affiche(image, "and without taking shield.", 72-16, l);l+=16;
+					break;
+			}break;
         case 2 :
             cadre(48,88,224,64);
-            if (gpJeu->getKeyboard()->getRang(i) && gpJeu->getKeyboard()->getRang(i+3)) 
-                gpJeu->affiche(image, "RANG : Two Worlds Marathon Runner", 56, 96);
-            else if (gpJeu->getKeyboard()->getRang(i) && !gpJeu->getKeyboard()->getRang(i+3)) 
-                gpJeu->affiche(image, "RANG : Hyrule Marathon Runner", 56, 96);
-            else if (!gpJeu->getKeyboard()->getRang(i) && gpJeu->getKeyboard()->getRang(i+3)) 
-                gpJeu->affiche(image, "RANG : Termina Marathon Runner", 56, 96);
-            else gpJeu->affiche(image, "RANG : UNKNOWN", 56, 96);
-            gpJeu->affiche(image, "Complete the game in less than four", 56, 112);
-            gpJeu->affiche(image, "hours", 56, 128);
-            break;
+            switch (getLanguage()){
+				case 2: // French
+					if (gpJeu->getKeyboard()->getRang(i) && gpJeu->getKeyboard()->getRang(i+3)) 
+						gpJeu->affiche(image, "RANG : Marathonienne à Deux Mondes", 56, 96);
+					else if (gpJeu->getKeyboard()->getRang(i) && !gpJeu->getKeyboard()->getRang(i+3)) 
+						gpJeu->affiche(image, "RANG : Marathonienne à Hyrule", 56, 96);
+					else if (!gpJeu->getKeyboard()->getRang(i) && gpJeu->getKeyboard()->getRang(i+3)) 
+						gpJeu->affiche(image, "RANG : Marathonienne à Termina", 56, 96);
+					else gpJeu->affiche(image, "RANG : INCONNU", 56, 96);
+					gpJeu->affiche(image, "Complétez le jeu en moins de", 56, 112);
+					gpJeu->affiche(image, "quatre heures", 56, 128);
+					break;
+				case 4: // Italian
+					if (gpJeu->getKeyboard()->getRang(i) && gpJeu->getKeyboard()->getRang(i+3)) 
+						gpJeu->affiche(image, "RANGO : Maratoneta di Due Mondi", 56, 96);
+					else if (gpJeu->getKeyboard()->getRang(i) && !gpJeu->getKeyboard()->getRang(i+3)) 
+						gpJeu->affiche(image, "RANGO : Maratoneta di Hyrule", 56, 96);
+					else if (!gpJeu->getKeyboard()->getRang(i) && gpJeu->getKeyboard()->getRang(i+3)) 
+						gpJeu->affiche(image, "RANGO : Maratoneta di Termina", 56, 96);
+					else gpJeu->affiche(image, "RANGO : SCONOSCIUTO", 56, 96);
+					gpJeu->affiche(image, "Completa il gioco in meno di", 56, 112);
+					gpJeu->affiche(image, "quattro ore", 56, 128);
+					break;
+				case 5: // Spanish
+					if (gpJeu->getKeyboard()->getRang(i) && gpJeu->getKeyboard()->getRang(i+3)) 
+						gpJeu->affiche(image, "RANGO : Maratoninao de Dos Mundos", 56, 96);
+					else if (gpJeu->getKeyboard()->getRang(i) && !gpJeu->getKeyboard()->getRang(i+3)) 
+						gpJeu->affiche(image, "RANGO : Maratoniano de Hyrule", 56, 96);
+					else if (!gpJeu->getKeyboard()->getRang(i) && gpJeu->getKeyboard()->getRang(i+3)) 
+						gpJeu->affiche(image, "RANGO : Maratoniano de Termina", 56, 96);
+					else gpJeu->affiche(image, "RANGO : DESCONOSCIDO", 56, 96);
+					gpJeu->affiche(image, "Completa el juego en menos de", 56, 112);
+					gpJeu->affiche(image, "cuatro horas", 56, 128);
+					break;
+				default:
+					if (gpJeu->getKeyboard()->getRang(i) && gpJeu->getKeyboard()->getRang(i+3)) 
+						gpJeu->affiche(image, "RANK : Two Worlds Marathon Runner", 56, 96);
+					else if (gpJeu->getKeyboard()->getRang(i) && !gpJeu->getKeyboard()->getRang(i+3)) 
+						gpJeu->affiche(image, "RANK : Hyrule Marathon Runner", 56, 96);
+					else if (!gpJeu->getKeyboard()->getRang(i) && gpJeu->getKeyboard()->getRang(i+3)) 
+						gpJeu->affiche(image, "RANK : Termina Marathon Runner", 56, 96);
+					else gpJeu->affiche(image, "RANK : UNKNOWN", 56, 96);
+					gpJeu->affiche(image, "Complete the game in less than four", 56, 112);
+					gpJeu->affiche(image, "hours", 56, 128);
+					break;
+			}
+			break;
     }
 }
 
