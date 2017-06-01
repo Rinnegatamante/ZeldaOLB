@@ -2119,9 +2119,8 @@ int Jeu::enleve() {
 
 void Jeu::setMenu(bool b) {
     menu = b;
-	stop = menu;
-//    if (!menu) gpMenu->menuOut();
-//    else {stop = true; gpMenu->menuIn();}
+	if (!menu) gpMenu->menuOut();
+    else {stop = true; gpMenu->menuIn();}
 }
 
 void Jeu::ecrit(int id, bool anim, bool cadre, int x, int y, int w, int h) {

@@ -60,9 +60,7 @@ int main(int argc, char** argv) {
         
         switch (gpKeyboard->getMode()) {
             case 0 : //jeu normal
-				gpJeu->draw(gpScreen);
-				if (gpJeu->getMenu()) SDL_FillRect(gpScreen, NULL, RGBA8(0, 0, 0, 0x80));
-				break;
+				gpJeu->draw(gpScreen); break;
             case 1 : //disclamer
             case 2 : //logo
             case 3 : //titre
