@@ -18,7 +18,7 @@ Bouclier::Bouclier(SDL_Surface* img, int id) : image(img), type(id) {
 }
 
 Bouclier::~Bouclier() {
-    SDL_FreeSurface(image);
+    if (image) SDL_FreeSurface(image);
     if(zone) delete zone;
 }
 

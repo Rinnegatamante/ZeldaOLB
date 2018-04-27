@@ -27,8 +27,10 @@ mort(0), porte(0), boostVie(0), boostMagie(0), boostRubis(0), pousse(0), trouve(
 avancement(0), tutoriel(0), invisible(false), dirglisse(0), dirglace(0), glace(0), 
 glisse(0), vitesse(0), oldxg(0), oldyg(0), immo(false), loader(false), verse(0),
 raplaplat(0), asile(0), gel(0) {
+    boucl = NULL;
     image = NULL;
 	imageTmp = NULL;
+    imageEpee = NULL;
     imageSpin = IMG_Load("app0:/images/link/spin.png");
     SDL_SetColorKey(imageSpin,SDL_SRCCOLORKEY,SDL_MapRGB(imageSpin->format,0,0,255));
     imageObjets = IMG_Load("app0:/images/link/objets.png");
@@ -51,7 +53,6 @@ raplaplat(0), asile(0), gel(0) {
     gpZoneBase->getZone()->y=8;
     gpZoneBase->getZone()->w=w;
     gpZoneBase->getZone()->h=16;
-    imageEpee = NULL;
     
 	load();
     
@@ -117,11 +118,10 @@ raplaplat(0), asile(0), gel(0) {
 }
 
 Joueur::~Joueur() {
-    if(boucl) delete boucl;
-    SDL_FreeSurface(imageEpee);
+    //if(boucl) delete boucl;
+    if (imageEpee) SDL_FreeSurface(imageEpee);
     SDL_FreeSurface(imageSpin);
     SDL_FreeSurface(imageObjets);
-//    if(image) SDL_FreeSurface(image);
     if(imageTmp) SDL_FreeSurface(imageTmp);
 }
 
@@ -709,12 +709,12 @@ int Joueur::getTypeAnim() {
 
 void Joueur::setBouclier(int b) {
     bouclier = b;
-    delete boucl;
+    if (boucl) delete boucl;
+    boucl = NULL;
     calculDef();
     if (!bouclier) return;
     std::ostringstream im;
     im << bouclier;
-//    if(image) SDL_FreeSurface(image);
     if (oni) {
         if (hasObjet(O_MASQUE)==2) 
            boucl = new Bouclier(IMG_Load("app0:/images/link/bouclierOni2.png"), 10);
@@ -735,7 +735,8 @@ void Joueur::setTunique(int t) {
 
 void Joueur::setEpee(int e) {
     epee = e;
-    SDL_FreeSurface(imageEpee);
+    if (imageEpee) SDL_FreeSurface(imageEpee);
+    imageEpee = NULL;
     if (!epee) return;
     std::ostringstream im;
     im << epee;
