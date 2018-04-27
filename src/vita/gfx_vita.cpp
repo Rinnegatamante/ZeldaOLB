@@ -32,7 +32,7 @@ void endTopFrame(void)
 			vita2d_draw_rectangle(360, 0, 40, 240, RGBA8(0, 0, 0, 0xff));
 		}
 		vita2d_end_drawing();
-		vita2d_start_drawing_advanced(NULL, VITA_2D_SCENE_VERTEX_WAIT_FOR_DEPENDENCY);
+		vita2d_start_drawing_advanced(NULL, SCE_GXM_SCENE_VERTEX_WAIT_FOR_DEPENDENCY);
 		vita2d_clear_screen();
 		vita2d_draw_texture_scale(fbo,27,0,2.2666,2.2666);
 		vita2d_draw_rectangle(0, 0, 27, 544, RGBA8(0, 0, 0, 0xff));
@@ -139,7 +139,8 @@ void SDL_FillRect(SDL_Surface* s, SDL_Rect* rect, uint32_t color)
 
 		if(!drawing)
 		{
-			vita2d_start_drawing_advanced(fbo, VITA_2D_RESET_POOL | VITA_2D_SCENE_FRAGMENT_SET_DEPENDENCY);
+            vita2d_pool_reset();
+			vita2d_start_drawing_advanced(fbo, SCE_GXM_SCENE_FRAGMENT_SET_DEPENDENCY);
 			drawing=true;
 		} 
 		if(rect) vita2d_draw_rectangle(rect->x+40*offset, rect->y, rect->w, rect->h, color);
@@ -167,7 +168,8 @@ void filledEllipseRGBA(SDL_Surface* s, int x, int y, int rx, int ry, uint8_t r, 
 	{
 		if(!drawing)
 		{
-			vita2d_start_drawing_advanced(fbo, VITA_2D_RESET_POOL | VITA_2D_SCENE_FRAGMENT_SET_DEPENDENCY);
+			vita2d_pool_reset();
+			vita2d_start_drawing_advanced(fbo, SCE_GXM_SCENE_FRAGMENT_SET_DEPENDENCY);
 			drawing=true;
 		} 
 		vita2d_draw_fill_circle(x*scalepos+40*offset, y, rx*scalewidth, RGBA8(r, g, b, a));
@@ -181,7 +183,8 @@ void SDL_BlitSurface(SDL_Surface* s, SDL_Rect * src, SDL_Surface* d, SDL_Rect * 
 	{
 		if(!drawing)
 		{
-			vita2d_start_drawing_advanced(fbo, VITA_2D_RESET_POOL | VITA_2D_SCENE_FRAGMENT_SET_DEPENDENCY);
+			vita2d_pool_reset();
+			vita2d_start_drawing_advanced(fbo, SCE_GXM_SCENE_FRAGMENT_SET_DEPENDENCY);
 			drawing=true;
 		} 
 

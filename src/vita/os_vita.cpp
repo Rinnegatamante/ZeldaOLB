@@ -15,7 +15,7 @@ int _newlib_heap_size_user = 192 * 1024 * 1024;
 int SDL_Init(int flag) //returns 0 on success, -1 on failure 
 {
     vita2d_init();
-	fbo = vita2d_create_empty_texture_format_advanced(960,544,SCE_GXM_TEXTURE_FORMAT_A8B8G8R8);
+	fbo = vita2d_create_empty_texture_format(960,544,SCE_GXM_TEXTURE_FORMAT_A8B8G8R8);
 	vita2d_set_vblank_wait(true);
 	
 	scePowerSetArmClockFrequency(444);
