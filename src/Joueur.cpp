@@ -325,8 +325,8 @@ void Joueur::draw(SDL_Surface* gpScreen) {
         SDL_Rect dst; dst.x=x-(avancement-16)*2-gpJeu->getPhg(0); dst.y=y-gpJeu->getPhg(1);
         SDL_BlitSurface(imageTmp, &src, gpScreen, &dst);
         if (getAvancement() == 63) {
-            if(imageTmp) SDL_FreeSurface(imageTmp);
-			imageTmp=NULL;
+            //if(imageTmp) SDL_FreeSurface(imageTmp);
+			//imageTmp=NULL;
             setImmo(false);
             gpJeu->getAudio()->playSound(5);
             SDL_Delay(2500);
