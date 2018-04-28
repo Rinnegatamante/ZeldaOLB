@@ -22,6 +22,7 @@ int SDL_Init(int flag) //returns 0 on success, -1 on failure
 	scePowerSetBusClockFrequency(222);
 	scePowerSetGpuClockFrequency(222);
 	scePowerSetGpuXbarClockFrequency(166);
+    sceCtrlSetSamplingMode(SCE_CTRL_MODE_ANALOG_WIDE);
 	
 	// Getting system language
 	sceAppUtilInit(&(SceAppUtilInitParam){}, &(SceAppUtilBootParam){});
@@ -106,6 +107,13 @@ int SDL_GetKeyState(void* p)
 {
 	SceCtrlData pad;
 	sceCtrlPeekBufferPositive(0, &pad, 1);
+    
+    // Left analog support
+    if ((!(pad.buttons & SCE_CTRL_LEFT)) & (pad.lx < 80)) pad.buttons += SCE_CTRL_LEFT;
+    if ((!(pad.buttons & SCE_CTRL_RIGHT)) & (pad.lx > 160)) pad.buttons += SCE_CTRL_RIGHT;
+    if ((!(pad.buttons & SCE_CTRL_UP)) & (pad.ly < 80)) pad.buttons += SCE_CTRL_UP;
+    if ((!(pad.buttons & SCE_CTRL_DOWN)) & (pad.ly > 160)) pad.buttons += SCE_CTRL_DOWN;
+    
 	return pad.buttons;
 }
 
