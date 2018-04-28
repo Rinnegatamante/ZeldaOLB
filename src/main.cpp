@@ -27,6 +27,8 @@ SDL_Surface* init() {             // initialise SDL
 	return SDL_SetVideoMode(640, 480, 32, SDL_HWSURFACE|SDL_DOUBLEBUF|SDL_FULLSCREEN);
 }
 
+bool credits = false;
+
 int main(int argc, char** argv) {
     if (argc && argv); //pour éviter un warning.....
     
@@ -56,6 +58,8 @@ int main(int argc, char** argv) {
     
     while (gLoop) {
         
+		credits = false;
+		
         if (gpKeyboard->gererClavier() == -1) {gLoop = false;}
         
         switch (gpKeyboard->getMode()) {
@@ -63,6 +67,7 @@ int main(int argc, char** argv) {
 				gpJeu->draw(gpScreen); break;
             case 1 : //disclamer
             case 2 : //logo
+				credits = true;
             case 3 : //titre
             case 14 : //générique score
             case 17 : //menu d'aide 1
