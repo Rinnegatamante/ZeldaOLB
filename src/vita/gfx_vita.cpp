@@ -69,7 +69,7 @@ SDL_Surface* SDL_SetVideoMode(int width, int height, int bpp, int flag)
 
 SDL_Surface* IMG_Load(const char* f)
 {
-    SDL_Surface* s;
+	SDL_Surface* s;
 	s = (SDL_Surface*) malloc(sizeof(SDL_Surface));
 	if(!s) return NULL;
 	s->texture = vita2d_load_PNG_file(f);
@@ -90,7 +90,7 @@ SDL_Surface* IMG_Load(const char* f)
 
 SDL_Surface* SDL_CreateRGBSurface(int type, int width, int height, int bpp, int a, int b, int c, int d)
 {
-    SDL_Surface* s;
+	SDL_Surface* s;
 	s = (SDL_Surface*) malloc(sizeof(SDL_Surface));
 	if(!s) return NULL;
 	s->texture = vita2d_create_empty_texture_format(width, height, SCE_GXM_TEXTURE_FORMAT_U8U8U8U8_ABGR);
@@ -110,7 +110,7 @@ SDL_Surface* SDL_CreateRGBSurface(int type, int width, int height, int bpp, int 
 
 void SDL_FreeSurface(SDL_Surface* s)
 {
-    if(s)
+	if(s)
 	{
 		if((s==(SDL_Surface*) 1) || (s==(SDL_Surface*) 2)) s=NULL;
 		else
@@ -129,17 +129,17 @@ void SDL_SetColorKey(SDL_Surface* s, int flag, uint32_t color)
 
 uint32_t SDL_MapRGB(int flag , uint8_t r, uint8_t g, uint8_t b)
 {
-    return RGBA8(r, g, b, 0xff);
+	return RGBA8(r, g, b, 0xff);
 }
 
 void SDL_FillRect(SDL_Surface* s, SDL_Rect* rect, uint32_t color)
 {
-    if (s==(SDL_Surface*) 1) 
+	if (s==(SDL_Surface*) 1) 
 	{
 
 		if(!drawing)
 		{
-            vita2d_pool_reset();
+			vita2d_pool_reset();
 			vita2d_start_drawing_advanced(fbo, SCE_GXM_SCENE_FRAGMENT_SET_DEPENDENCY);
 			drawing=true;
 		} 
@@ -164,7 +164,7 @@ void SDL_FillRect(SDL_Surface* s, SDL_Rect* rect, uint32_t color)
 
 void filledEllipseRGBA(SDL_Surface* s, int x, int y, int rx, int ry, uint8_t r, uint8_t g, uint8_t b, uint8_t a)
 {
-    if (s==(SDL_Surface*) 1) 
+	if (s==(SDL_Surface*) 1) 
 	{
 		if(!drawing)
 		{
@@ -179,7 +179,7 @@ void filledEllipseRGBA(SDL_Surface* s, int x, int y, int rx, int ry, uint8_t r, 
 void SDL_BlitSurface(SDL_Surface* s, SDL_Rect * src, SDL_Surface* d, SDL_Rect * dst)
 {
 	uint32_t pixel;
-    if(d==(SDL_Surface*) 1)
+	if(d==(SDL_Surface*) 1)
 	{
 		if(!drawing)
 		{
