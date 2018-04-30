@@ -1,3 +1,11 @@
+*.bin
+*.o
+*.velf
+*.elf
+*.vpk
+*.sfo
+*.txt
+
 # Windows image file caches
 Thumbs.db
 ehthumbs.db
