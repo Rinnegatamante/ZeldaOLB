@@ -177,7 +177,7 @@ void ImGui_callback() {
 		}
 		
 		if (credits_window){
-			ImGui::Begin("Credits", &vflux_window);
+			ImGui::Begin("Credits", &credits_window);
 			ImGui::TextColored(ImVec4(255, 255, 0, 255), "Zelda: Oni Link Begins Vita v.1.5");
 			ImGui::Text("Game Creator: Vincent Jouillat");
 			ImGui::Text("Port Author: Rinnegatamante");
