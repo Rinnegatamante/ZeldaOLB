@@ -8,6 +8,7 @@
 
 */
 
+#include <SDL/SDL_image.h>
 #include <cmath>
 
 #include "Menu.h"

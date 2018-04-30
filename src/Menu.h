@@ -11,7 +11,7 @@
 #ifndef __MENU_H__
 #define __MENU_H__
 
-#include "vita/gfx_vita.h"
+#include <SDL/SDL.h>
 #include "vita/os_vita.h"
 #include <vitasdk.h>
 

@@ -11,7 +11,7 @@
 #ifndef __BOUCLIER_H__
 #define __BOUCLIER_H__
 
-#include "vita/gfx_vita.h"
+#include <SDL/SDL.h>
 
 #include "ZoneRect.h"
 

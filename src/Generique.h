@@ -12,7 +12,7 @@
 #define __GENERIQUE_H__
 
 #include "vita/os_vita.h"
-#include "vita/gfx_vita.h"
+#include <SDL/SDL.h>
 
 class Jeu;
 

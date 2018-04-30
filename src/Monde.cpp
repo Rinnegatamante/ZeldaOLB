@@ -12,6 +12,7 @@
 #include <sstream>
 #include <fstream>
 
+#include <SDL/SDL_image.h>
 #include "vita/os_vita.h"
 
 #include "Menu.h"
@@ -21,6 +22,11 @@
 #include "Projectile.h"
 #include "Jeu.h"
 #include "Common.h"
+
+extern "C"{
+int filledEllipseRGBA(SDL_Surface * dst, int16_t x, int16_t y,
+    int16_t rx, int16_t ry, uint8_t r, uint8_t g, uint8_t b, uint8_t a);
+};
 
 Monde::Monde(Jeu* jeu) : largeur(0), hauteur(0), plafondmax(0), anim(0), utile(0),
 musique(0), gpJeu(jeu), animtransX(0), animtransY(0), animtransC(0), niveau(0), charge(1),

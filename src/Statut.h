@@ -11,7 +11,7 @@
 #ifndef __STATUT_H__
 #define __STATUT_H__
 
-#include "vita/gfx_vita.h"
+#include <SDL/SDL.h>
 
 class Jeu;
 

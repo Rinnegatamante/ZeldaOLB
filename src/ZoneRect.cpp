@@ -9,7 +9,7 @@
 */
 
 #include "ZoneRect.h"
-#include "vita/gfx_vita.h"
+#include <SDL/SDL.h>
 
 ZoneRect::ZoneRect(SDL_Rect* zn) : Listable(), zone(zn) {
 }

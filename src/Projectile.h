@@ -13,7 +13,7 @@
 
 #include "Listable.h"
 #include "Common.h"
-#include "vita/gfx_vita.h"
+#include <SDL/SDL.h>
 
 class Jeu;
 

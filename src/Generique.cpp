@@ -8,6 +8,7 @@
 
 */
 
+#include <SDL/SDL_image.h>
 #include "Generique.h"
 #include "Jeu.h"
 #include "Keyboard.h"
@@ -1151,19 +1152,9 @@ void Generique::initScore() {
         gpJeu->affiche(image, " - "+result, 52, ligne); ligne+=20;}
 }
 
-extern bool credits;
-vita2d_pgf *debug_font = nullptr;
-
 void Generique::draw(SDL_Surface* gpScreen) {
     SDL_Rect dst; dst.x = 0; dst.y = 0;
     SDL_BlitSurface(image, NULL, gpScreen, &dst);
-	if (credits) {
-		if (debug_font == nullptr) debug_font = vita2d_load_default_pgf();
-		vita2d_pgf_draw_text(debug_font, 50, 15, RGBA8(0xFF, 0xFF, 0xFF, 0xFF), 0.6,
-			"Thanks to XandridFire, Billy McLaughlin II, Styde Pregny");
-		vita2d_pgf_draw_text(debug_font, 80, 30, RGBA8(0xFF, 0xFF, 0xFF, 0xFF), 0.6,
-			"for their awesome support on Patreon!");
-	}
 }
 
 void Generique::drawTitre(SDL_Surface* gpScreen) {

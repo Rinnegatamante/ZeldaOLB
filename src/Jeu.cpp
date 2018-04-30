@@ -16,6 +16,7 @@
 #include "Jeu.h"
 #include "Keyboard.h"
 
+#include <SDL/SDL_image.h>
 #include <cstdlib>
 #include <iostream>
 
@@ -47,6 +48,8 @@ Jeu::~Jeu() {
     delete gpEnnemi;
     delete gpPiege;
     delete gpPnj;
+	//Shin-NiL memory leak correction		
+	if (imageObjets) SDL_FreeSurface(imageObjets);
 }
 
 void Jeu::init(int save) {

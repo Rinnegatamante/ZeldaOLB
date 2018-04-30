@@ -8,6 +8,8 @@
 
 */
 
+#include <SDL/SDL_image.h>
+
 #include "Menu.h"
 #include "Joueur.h"
 #include "Monde.h"

@@ -8,6 +8,7 @@
 
 */
 
+#include <SDL/SDL_image.h>
 #include "Encyclopedie.h"
 
 Encyclopedie::Encyclopedie(Jeu* jeu) : gpJeu(jeu), page(0), gpEnnemi(0) {

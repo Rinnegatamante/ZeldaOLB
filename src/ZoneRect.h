@@ -11,7 +11,7 @@
 #ifndef __ZONERECT_H__
 #define __ZONERECT_H__
 
-#include "vita/gfx_vita.h"
+#include <SDL/SDL.h>
 
 #include "Listable.h"
 

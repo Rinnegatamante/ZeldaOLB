@@ -15,7 +15,8 @@
 #include "Texte.h"
 #include "Projectile.h"
 #include "Jeu.h"
-#include "vita/gfx_vita.h"
+#include <SDL/SDL.h>
+#include <SDL/SDL_image.h>
 
 #include <iostream>
 

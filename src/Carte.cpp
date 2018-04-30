@@ -8,6 +8,7 @@
 
 */
 
+#include <SDL/SDL_image.h>
 #include "Carte.h"
 #include "Keyboard.h"
 

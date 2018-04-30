@@ -12,7 +12,8 @@
 #include <iostream>
 #include <string>
 
-#include "vita/gfx_vita.h"
+#include <SDL/SDL.h>
+#include <SDL/SDL_image.h>
 
 #include "Menu.h"
 #include "Texte.h"

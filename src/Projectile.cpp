@@ -16,8 +16,8 @@
 #include "Texte.h"
 #include "Jeu.h"
 
-
-#include "vita/gfx_vita.h"
+#include <SDL/SDL.h>
+#include <SDL/SDL_image.h>
 
 Projectile::Projectile(Jeu* jeu, int type, Direction dir, int a, int b, int vit) : 
 Listable(), gpJeu(jeu), id(type), direction(dir), x(a), y(b), anim(0), max(0), 
@@ -111,9 +111,10 @@ void Projectile::draw(SDL_Surface* gpScreen) {
             
             if (id >=21 && id <=26) {
                 if (!anim) { src.x=112; src.y=(id-21)*16;}
-                if (anim==1) { src.x=64; src.y=74;}
-                if (anim==2) { src.x=56; src.y=90;}
-                if (anim>2) { src.x=80; src.y=74;}
+				else if (anim==1) { src.x=64; src.y=74;}
+                else if (anim==2) { src.x=56; src.y=90;}
+                else if (anim>2) { src.x=80; src.y=74;}
+				vanim = 0;
             }
             
             SDL_BlitSurface(image, &src, gpScreen, &dst);

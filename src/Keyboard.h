@@ -11,8 +11,14 @@
 #ifndef __KEYBOARD_H__
 #define __KEYBOARD_H__
 
+#include <SDL/SDL.h>
 #include "Carte.h"
 #include "Encyclopedie.h"
+
+typedef struct SDL_Point {
+    int x;
+    int y;
+} SDL_Point;
 
 class Keyboard {
     public :

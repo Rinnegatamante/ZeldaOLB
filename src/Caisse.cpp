@@ -9,6 +9,7 @@
 */
 
 #include "vita/os_vita.h"
+#include <SDL/SDL_image.h>
 
 #include "Menu.h"
 #include "Joueur.h"

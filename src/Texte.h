@@ -12,7 +12,7 @@
 #define __TEXTE_H__
 
 #include <string>
-#include "vita/gfx_vita.h"
+#include <SDL/SDL.h>
 
 class Jeu;
 

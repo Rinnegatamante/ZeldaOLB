@@ -16,7 +16,8 @@
 #include "Menu.h"
 #include "Texte.h"
 #include "Jeu.h"
-#include "vita/gfx_vita.h"
+#include <SDL/SDL.h>
+#include <SDL/SDL_image.h>
 
 #include <cmath>
 using std::fabs;

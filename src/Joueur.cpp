@@ -8,6 +8,7 @@
 
 */
 
+#include <SDL/SDL_image.h>
 #include "vita/os_vita.h"
 
 #include "Menu.h"
@@ -29,7 +30,7 @@ glisse(0), vitesse(0), oldxg(0), oldyg(0), immo(false), loader(false), verse(0),
 raplaplat(0), asile(0), gel(0) {
     boucl = NULL;
     image = NULL;
-	imageTmp = NULL;
+    imageTmp = NULL;
     imageEpee = NULL;
     imageSpin = IMG_Load("app0:/images/link/spin.png");
     SDL_SetColorKey(imageSpin,SDL_SRCCOLORKEY,SDL_MapRGB(imageSpin->format,0,0,255));
@@ -53,7 +54,6 @@ raplaplat(0), asile(0), gel(0) {
     gpZoneBase->getZone()->y=8;
     gpZoneBase->getZone()->w=w;
     gpZoneBase->getZone()->h=16;
-    
 	load();
     
     if (oni && !onilink) objet=8;
@@ -118,7 +118,6 @@ raplaplat(0), asile(0), gel(0) {
 }
 
 Joueur::~Joueur() {
-    //if(boucl) delete boucl;
     if (imageEpee) SDL_FreeSurface(imageEpee);
     SDL_FreeSurface(imageSpin);
     SDL_FreeSurface(imageObjets);
@@ -325,8 +324,7 @@ void Joueur::draw(SDL_Surface* gpScreen) {
         SDL_Rect dst; dst.x=x-(avancement-16)*2-gpJeu->getPhg(0); dst.y=y-gpJeu->getPhg(1);
         SDL_BlitSurface(imageTmp, &src, gpScreen, &dst);
         if (getAvancement() == 63) {
-            //if(imageTmp) SDL_FreeSurface(imageTmp);
-			//imageTmp=NULL;
+            //SDL_FreeSurface(imageTmp);
             setImmo(false);
             gpJeu->getAudio()->playSound(5);
             SDL_Delay(2500);
@@ -761,7 +759,6 @@ int Joueur::nbQuarts() {
 
 int Joueur::nbCristaux() {
     int total = 0;
-//    for (int i = 0; i < 7; i++) total += cristaux[i];
     for (int i = 0; i < 5; i++) total += cristaux[i];
     return total;
 }
