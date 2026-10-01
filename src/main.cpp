@@ -72,7 +72,6 @@ void setLanguage(int languageID)
 }
 
 SDL_Surface* init() {             // initialise SDL
-	vglUseVram(true);
     if(SDL_Init(SDL_INIT_VIDEO) == -1) {
         exit(-1);
     }
@@ -225,9 +224,9 @@ void ImGui_callback() {
 		glEnableClientState(GL_COLOR_ARRAY);
 		glEnableClientState(GL_VERTEX_ARRAY);
 		vglIndexPointerMapped(vindices);
-		vglVertexPointerMapped(vertices);
+		vglVertexPointerMapped(3, vertices);
 		vglColorPointerMapped(GL_FLOAT, colors);
-		vglDrawObjects(GL_TRIANGLE_FAN, 4, true);
+		vglDrawObjects(GL_TRIANGLE_FAN, 4);
 		glDisableClientState(GL_COLOR_ARRAY);
 		glDisableClientState(GL_VERTEX_ARRAY);
 	}

@@ -2,10 +2,14 @@ TARGET		:= ZeldaOLB
 SOURCES		:= src src/vita
 INCLUDES	:= include
 
-LIBS = -lSDL_gfx -lSDL_image -lSDL -lvitaGL -limgui -lSceLibKernel_stub -lSceCtrl_stub -lSceTouch_stub \
+MEDIA_LIBS := $(shell arm-vita-eabi-pkg-config --static --libs SDL_gfx SDL_image freetype2)
+
+LIBS = $(MEDIA_LIBS) -lSDL_gfx -lSDL_image -lSDL -lvitaGL -limgui -lSceLibKernel_stub -lSceCtrl_stub -lSceTouch_stub \
 	-lm -lScePgf_stub -ljpeg -lfreetype -lc -lScePower_stub -lSceCommonDialog_stub -lpng16 -lz \
 	-lSceSysmodule_stub -lSceGxm_stub -lSceDisplay_stub -lSceAppUtil_stub -lSceHid_stub \
-	-lvorbisfile -lvorbis -logg -lspeexdsp -lSceAudio_stub -lSceIofilemgr_stub
+	-lvorbisfile -lvorbis -logg -lspeexdsp -lSceAudio_stub -lSceIofilemgr_stub \
+	-lvitashark -lmathneon -lSceShaccCgExt -ltaihen_stub -lSceShaccCg_stub \
+	-lSceKernelDmacMgr_stub -lSceAppMgr_stub
 
 CFILES   := $(foreach dir,$(SOURCES), $(wildcard $(dir)/*.c))
 CPPFILES   := $(foreach dir,$(SOURCES), $(wildcard $(dir)/*.cpp))
@@ -26,9 +30,10 @@ $(TARGET).vpk: $(TARGET).velf
 	vita-mksfoex -s TITLE_ID=ZELDAOLB1 "Zelda: Oni Link Begins" param.sfo
 	cp -f param.sfo sce_sys/param.sfo
 	
-	#------------ Comment this if you don't have 7zip ------------------
-	7z a -tzip $(TARGET).vpk -r images/* map/* music/* sound/* sce_sys/* eboot.bin 
-	#-------------------------------------------------------------------
+	vita-pack-vpk -s param.sfo -b eboot.bin \
+		--add images=images --add map=map --add music=music --add sound=sound \
+		--add sce_sys/icon0.png=sce_sys/icon0.png \
+		--add sce_sys/livearea=sce_sys/livearea $@
 
 %.velf: %.elf
 	cp $< $<.unstripped.elf
@@ -37,7 +42,7 @@ $(TARGET).vpk: $(TARGET).velf
 	vita-make-fself -s $@ eboot.bin
 	
 $(TARGET).elf: $(OBJS)
-	$(CXX) $(CXXFLAGS) $^ $(LIBS) -o $@
+	$(CXX) $(CXXFLAGS) -Wl,--defsym=__sce_headroom=0x10000 $^ $(LIBS) -o $@
 
 clean:
 	@rm -rf $(TARGET).velf $(TARGET).elf $(OBJS) param.sfo $(TARGET).vpk
